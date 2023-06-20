@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 01 - Buổi 02</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #e7e7e7;
+      }
+
+      .container {
+        width: 600px;
+        padding: 36px;
+      }
+
+      .box {
+        padding: 16px;
+      }
+
+      p {
+        width: 80%;
+        padding-top: 16px;
+      }
+
+      table {
+        width: 100%;
+        border-spacing: 16px;
+      }
+
+      td {
+        border-bottom: 16px;
+      }
+
+      td span {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 6px;
+      }
+
+      td input,
+      td select {
+        border-radius: 0;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #bebebe;
+        padding: 10px 8px;
+      }
+
+      td select,
+      td input {
+        width: 100%;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+      }
+
+      button {
+        padding: 12px 24px;
+        border-width: 0;
+        border-radius: 0;
+        background-color: #07768e;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Try a free sample</h1>
+
+        <p>
+          Sign up to get a coupon you can redeem at your nearest Dancing Goat cafe for a sample of the Colombia Carlos Imbachi coffee. We'll also make sure you
+          don't miss out on news introducing the new coffees that we add to our store regularly.
+        </p>
+      </div>
+
+      <table>
+        <tr>
+          <td>
+            <span>First name</span>
+            <input type="text" placeholder="First name" />
+          </td>
+          <td>
+            <span>Last name</span>
+            <input type="text" placeholder="Last name" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>Email address</span>
+            <input type="email" placeholder="Email address" />
+          </td>
+          <td>
+            <span>Address</span>
+            <input type="text" placeholder="Address" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>City</span>
+            <input type="text" placeholder="City" />
+          </td>
+          <td>
+            <span>State (optional)</span>
+            <input type="text" placeholder="State" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span>ZIP code</span>
+            <input type="text" placeholder="ZIP code" />
+          </td>
+          <td>
+            <span>Country</span>
+            <select title="Country">
+              <option value="uk">United Kingdom</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="box">
+        <button type="button">SEND ME FREE COFFEE</button>
+      </div>
+    </div>
+  </body>
+</html>

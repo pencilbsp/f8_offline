@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập 02 - Buổi 02</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        width: 400px;
+        margin: 0 auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        border: 3px solid #8fb7a8;
+      }
+
+      td:first-child {
+        border-left: none;
+      }
+
+      td:last-child {
+        border-right: none;
+      }
+
+      tr:first-child td {
+        border: none;
+      }
+
+      td .result {
+        font-size: 45px;
+        font-weight: bold;
+        text-align: right;
+        padding: 16px;
+      }
+
+      td button {
+        border: none;
+        width: 100%;
+        background: none;
+        font-size: 40px;
+        font-weight: bold;
+        padding: 8px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table>
+        <tr>
+          <td colspan="4"><p class="result">9+9</p></td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button">1</button>
+          </td>
+          <td>
+            <button type="button">2</button>
+          </td>
+          <td>
+            <button type="button">3</button>
+          </td>
+          <td>
+            <button type="button">+</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button">4</button>
+          </td>
+          <td>
+            <button type="button">5</button>
+          </td>
+          <td>
+            <button type="button">6</button>
+          </td>
+          <td>
+            <button type="button">-</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button">7</button>
+          </td>
+          <td>
+            <button type="button">8</button>
+          </td>
+          <td>
+            <button type="button">9</button>
+          </td>
+          <td>
+            <button type="button">x</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button type="button">C</button>
+          </td>
+          <td>
+            <button type="button">0</button>
+          </td>
+          <td>
+            <button type="button">=</button>
+          </td>
+          <td>
+            <button type="button">/</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
