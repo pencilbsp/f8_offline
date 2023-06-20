@@ -38,7 +38,7 @@
         border-bottom: 16px;
       }
 
-      td span {
+      td label {
         display: block;
         font-weight: bold;
         margin-bottom: 6px;
@@ -87,42 +87,42 @@
       <table>
         <tr>
           <td>
-            <span>First name</span>
-            <input type="text" placeholder="First name" />
+            <label for="first-name">First name</label>
+            <input id="first-name" type="text" placeholder="First name" />
           </td>
           <td>
-            <span>Last name</span>
-            <input type="text" placeholder="Last name" />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <span>Email address</span>
-            <input type="email" placeholder="Email address" />
-          </td>
-          <td>
-            <span>Address</span>
-            <input type="text" placeholder="Address" />
+            <label for="last-name">Last name</label>
+            <input id="last-name" type="text" placeholder="Last name" />
           </td>
         </tr>
         <tr>
           <td>
-            <span>City</span>
-            <input type="text" placeholder="City" />
+            <label for="email">Email address</label>
+            <input id="email" type="email" placeholder="Email address" />
           </td>
           <td>
-            <span>State (optional)</span>
-            <input type="text" placeholder="State" />
+            <label for="address">Address</label>
+            <input id="address" type="text" placeholder="Address" />
           </td>
         </tr>
         <tr>
           <td>
-            <span>ZIP code</span>
-            <input type="text" placeholder="ZIP code" />
+            <label for="city">City</label>
+            <input id="city" type="text" placeholder="City" />
           </td>
           <td>
-            <span>Country</span>
-            <select title="Country">
+            <label for="state">State (optional)</label>
+            <input id="state" type="text" placeholder="State" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="zipcode">ZIP code</label>
+            <input id="zipcode" type="text" placeholder="ZIP code" />
+          </td>
+          <td>
+            <label for="country">State (optional)</label>
+            <select id="country" title="Country">
               <option value="uk">United Kingdom</option>
             </select>
           </td>
