@@ -37,11 +37,12 @@
         border: none;
       }
 
-      td .result {
+      td #result {
         font-size: 45px;
         font-weight: bold;
         text-align: right;
         padding: 16px;
+        min-height: 84px;
       }
 
       td button {
@@ -58,65 +59,110 @@
     <div class="container">
       <table>
         <tr>
-          <td colspan="4"><p class="result">9+9</p></td>
+          <td colspan="4"><p id="result"></p></td>
         </tr>
         <tr>
           <td>
-            <button type="button">1</button>
+            <button data-value="1" type="button">1</button>
           </td>
           <td>
-            <button type="button">2</button>
+            <button data-value="2" type="button">2</button>
           </td>
           <td>
-            <button type="button">3</button>
+            <button data-value="3" type="button">3</button>
           </td>
           <td>
-            <button type="button">+</button>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <button type="button">4</button>
-          </td>
-          <td>
-            <button type="button">5</button>
-          </td>
-          <td>
-            <button type="button">6</button>
-          </td>
-          <td>
-            <button type="button">-</button>
+            <button data-value="+" type="button">+</button>
           </td>
         </tr>
         <tr>
           <td>
-            <button type="button">7</button>
+            <button data-value="4" type="button">4</button>
           </td>
           <td>
-            <button type="button">8</button>
+            <button data-value="5" type="button">5</button>
           </td>
           <td>
-            <button type="button">9</button>
+            <button data-value="6" type="button">6</button>
           </td>
           <td>
-            <button type="button">x</button>
+            <button data-value="-" type="button">-</button>
           </td>
         </tr>
         <tr>
           <td>
-            <button type="button">C</button>
+            <button data-value="7" type="button">7</button>
           </td>
           <td>
-            <button type="button">0</button>
+            <button data-value="8" type="button">8</button>
           </td>
           <td>
-            <button type="button">=</button>
+            <button data-value="9" type="button">9</button>
           </td>
           <td>
-            <button type="button">/</button>
+            <button data-value="*" type="button">x</button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button data-value="C" type="button">C</button>
+          </td>
+          <td>
+            <button data-value="0" type="button">0</button>
+          </td>
+          <td>
+            <button data-value="=" type="button">=</button>
+          </td>
+          <td>
+            <button data-value="/" type="button">/</button>
           </td>
         </tr>
       </table>
     </div>
+
+    <script>
+      // *
+      let num1 = null;
+      let num2 = null;
+      let result = null;
+      let operator = null;
+      const resultElm = document.getElementById("result");
+      function btnClick(event) {
+        const value = event.target.dataset.value;
+
+        if (value.match(/\d/)) {
+          const num = resultElm.textContent + value;
+          if (!operator) {
+            num1 = Number(num);
+          } else num2 = Number(num);
+          resultElm.textContent = num;
+        }
+
+        if (["+", "-", "*", "/"].includes(value)) {
+          if (num1) operator = value;
+          if (result) {
+            num2 = null;
+            num1 = Number(result);
+            result = null;
+            operator = value;
+          }
+          resultElm.textContent = "";
+        }
+
+        if (value === "C") {
+          resultElm.textContent = "";
+          num1 = num2 = operator = result = null;
+        }
+
+        if (value === "=") {
+          console.log({ num1, num2, operator });
+          if (!num1 || !num2 || !operator) return;
+          result = eval(`${num1}${operator}${num2}`);
+          resultElm.textContent = result;
+        }
+      }
+
+      document.querySelectorAll("button").forEach((btn) => btn.addEventListener("click", btnClick));
+    </script>
   </body>
 </html>
