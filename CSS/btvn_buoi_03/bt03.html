@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Access Manager</title>
+
+    <style>
+      .container {
+        width: 350px;
+      }
+
+      form > div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      input {
+        flex: 1;
+      }
+
+      div > label {
+        display: inline-block;
+        width: 120px;
+      }
+
+      div > span {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <div>
+          <label for="username">Username:</label>
+          <input id="username" type="text" />
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input id="password" type="password" />
+        </div>
+        <div>
+          <label for="city">City of Employment:</label>
+          <input id="city" type="text" />
+        </div>
+        <div>
+          <label for="server">Web server:</label>
+          <select name="" id="">
+            <option value="">--Choose a server--</option>
+          </select>
+        </div>
+        <div>
+          <label>Please specify your role:</label>
+          <span>
+            <label><input name="role" type="radio" />Admin</label>
+            <label><input name="role" type="radio" />Enginner</label>
+            <label><input name="role" type="radio" />Manager</label>
+            <label><input name="role" type="radio" />Guest</label>
+          </span>
+        </div>
+        <div>
+          <label>Single Sign-on to the following:</label>
+          <span>
+            <label><input name="follow" type="checkbox" />Mail</label>
+            <label><input name="follow" type="checkbox" />Payroll</label>
+            <label><input name="follow" type="checkbox" />Self-service</label>
+          </span>
+        </div>
+        <div>
+          <label></label>
+          <button type="submit" style="margin-right: 10px">Login</button>
+          <button type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

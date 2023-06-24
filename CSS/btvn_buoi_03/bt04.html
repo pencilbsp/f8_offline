@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Jost", sans-serif;
+      }
+
+      .container {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 36px;
+      }
+
+      .tab {
+        display: inline-flex;
+        border: 2px solid #b09658;
+        margin-bottom: 36px;
+      }
+
+      .tablinks {
+        background: transparent;
+        border: none;
+        padding: 8px 32px;
+        color: #b09658;
+      }
+
+      .tablinks.active {
+        background-color: #b09658;
+        color: white;
+      }
+
+      .tabcontent {
+        display: flex;
+        background-color: #f6f6f6;
+      }
+
+      .contact {
+        padding: 24px;
+        color: #707070;
+        margin-bottom: 72px;
+        width: 30%;
+      }
+
+      .contact address {
+        margin: 12px 0;
+      }
+
+      .contact a {
+        color: #707070;
+      }
+
+      .contact h2 {
+        color: #333;
+      }
+
+      .iframe-map {
+        flex: 1;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a > span {
+        color: #b09658;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="tab">
+        <button class="tablinks active">United Arab</button>
+        <button class="tablinks">London</button>
+        <button class="tablinks">Singapore</button>
+        <button class="tablinks">Hong Kong</button>
+      </div>
+
+      <div id="London" class="tabcontent">
+        <div class="contact">
+          <h2>ADS SECURITIES L.L.C.</h2>
+          <address>Nhà D11, lô A10,<br />khu đô thị Nam Trung Yên,<br />Trung Hòa, Cầu Giấy</address>
+          <a href="tel:+84869231211">Tel: +84 869 231 211</a>
+          <p>Fax: +84 869 231 211</p>
+          <a href="mailto:pencil.bsp@gmail.com">Email: <span>pencil.bsp@gmail.com</span></a>
+        </div>
+        <iframe
+          class="iframe-map"
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d232.7713816000356!2d105.788328976921!3d21.01899325335935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDAxJzA4LjUiTiAxMDXCsDQ3JzE3LjciRQ!5e0!3m2!1svi!2s!4v1687530623242!5m2!1svi!2s"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>

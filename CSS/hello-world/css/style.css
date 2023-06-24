@@ -1,0 +1,40 @@
+/* Đây là comment CSS */
+
+#title {
+  color: blue;
+}
+
+.sub-title {
+  font-size: 40px;
+}
+
+h3 {
+  text-align: right;
+}
+
+/* .content h2 {
+  color: red;
+}
+
+.box h2 {
+  color: green;
+} */
+
+.content > h2 {
+  color: rebeccapurple;
+}
+
+.content > div > h2 {
+  color: aqua;
+}
+
+.menu > li > a {
+  color: red;
+}
+
+h2.title.first {
+  color: red;
+}
+h2.title.last {
+  color: green;
+}

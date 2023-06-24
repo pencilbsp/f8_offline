@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form liên hệ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lexend", sans-serif;
+      }
+
+      input:focus,
+      textarea:focus {
+        outline: none;
+      }
+
+      .container {
+        padding: 36px;
+        margin: 0 auto;
+        max-width: 1280px;
+      }
+
+      main {
+        display: flex;
+        gap: 36px;
+      }
+
+      /* Contact info begin */
+      .contact-info {
+        width: 30%;
+      }
+
+      .contact-title {
+        padding: 32px 0;
+      }
+
+      .title-line {
+        margin-top: 12px;
+        height: 3px;
+        width: 72px;
+        background-color: #ffb737;
+      }
+
+      .contact-list {
+        list-style: none;
+      }
+
+      .contact-item {
+        display: flex;
+        margin-bottom: 24px;
+        color: #999999;
+      }
+
+      .contact-item a {
+        color: #999999;
+        text-decoration: none;
+      }
+
+      .contact-item i {
+        font-size: 24px;
+        margin-right: 16px;
+      }
+      /* Contact info End */
+
+      /* Contact form begin */
+
+      .contact-form {
+        width: 70%;
+      }
+
+      .contact-form form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        display: block;
+        width: 100%;
+        padding: 8px;
+        border-radius: 0;
+        border-width: 2px;
+        border-style: solid;
+        border-color: #e1e1e1;
+      }
+
+      .contact-form button {
+        width: fit-content;
+        border: none;
+        border-radius: 0;
+        background-color: #0bb8b6;
+        color: #fff;
+        padding: 8px 16px;
+      }
+
+      /* Contact form End */
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>CONTACT US</h1>
+        <div class="title-line"></div>
+      </header>
+
+      <main>
+        <div class="contact-info">
+          <h2 class="contact-title">Contact Info</h2>
+
+          <ul class="contact-list">
+            <li class="contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <address>321 Awesome Street<br />New York, NY 17022</address>
+            </li>
+
+            <li class="contact-item">
+              <i class="fa-regular fa-envelope"></i>
+              <a href="mailto:info@companyname.com">info@companyname.com</a>
+            </li>
+
+            <li class="contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+18001231234">+1 800 123 1234</a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <h2 class="contact-title">Having Any Query! Or Book an appointment</h2>
+          <form action="">
+            <input type="text" name="name" placeholder="Your Name" />
+            <input type="email" name="email" placeholder="Your Email" />
+            <input type="text" name="subject" placeholder="Subject" />
+            <textarea name="message" rows="5" placeholder="Message"></textarea>
+            <button>Send Message</button>
+          </form>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
