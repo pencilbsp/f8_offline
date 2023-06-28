@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      /* .websites a[target] {
+        color: red;
+      } */
+
+      /* Attribute selector */
+      /* .websites a[href^="https://fullstack.edu.vn"]
+      {
+        color: red;
+      } */
+
+      /* .websites a[href*="fullstack.edu.vn"] {
+        color: red;
+      } */
+
+      .images a[href$=".jpg"] {
+        color: red;
+      }
+
+      [class^="item-"] {
+        border: 1px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <ul class="websites">
+      <li><a href="https://fullstack.edu.vn">Fullstack</a></li>
+      <li><a href="https://fullstack.edu.vn/courses/react">Khoá học react</a></li>
+      <li><a href="https://fullstack-nodej.fullstack.edu.vn/courses/react">Khoá học Offline</a></li>
+      <li><a href="https://dantri.vn" target="_self">Dân Trí</a></li>
+      <li><a href="https://vnexpress.vn" target="_blank">VNExpress</a></li>
+    </ul> -->
+
+    <!-- <div class="images">
+      <a href="https://fullstack.edu.vn/img/anh1.jpg">Anh 1</a>
+      <a href="https://fullstack.edu.vn/img/anh2.png">Anh 2</a>
+      <a href="https://fullstack.edu.vn/img/anh3.jpg">Anh 3</a>
+    </div> -->
+
+    <div class="list">
+      <div class="item-1">Item 1</div>
+      <div class="item-2">Item 2</div>
+      <div class="item-3">Item 3</div>
+      <div class="item-4">Item 4</div>
+      <div class="item-5">Item 5</div>
+    </div>
+  </body>
+</html>

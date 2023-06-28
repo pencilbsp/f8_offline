@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input {
+        display: none;
+      }
+
+      #red:checked ~ .content {
+        color: red;
+      }
+      #blue:checked ~ .content {
+        color: blue;
+      }
+      #green:checked ~ .content {
+        color: green;
+        color: attr(data-color);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <label for="red"> Red </label>
+      <label for="green"> Green </label>
+      <label for="blue"> Blue </label>
+    </div>
+    <hr />
+    <input name="color" type="radio" id="red" />
+    <input name="color" type="radio" id="green" />
+    <input name="color" type="radio" id="blue" />
+    <div class="content">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum hic repudiandae ipsam corrupti vitae, veritatis totam quidem nostrum debitis cupiditate
+      autem iusto aut, expedita repellat officiis qui accusamus deserunt quisquam?
+    </div>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .title::before {
+        content: "<";
+      }
+      .title::after {
+        content: ">";
+      }
+
+      .sub-title::before {
+        content: attr(data-name);
+      }
+
+      .content p::first-line {
+        color: red;
+      }
+
+      .content p::first-letter {
+        font-size: 2rem;
+        font-style: italic;
+      }
+
+      .content p::selection {
+        background-color: black;
+        color: yellow;
+      }
+
+      .fullname,
+      .fullname::placeholder {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Khoá học Fullstack tại F8</h1>
+    <h2 class="sub-title" data-name="F8">Khoá học Fullstack tại F8</h2>
+
+    <div class="content">
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla adipisci, impedit maxime voluptatem quaerat veniam nihil beatae nostrum ad tenetur cum
+        sapiente cumque, ut labore perferendis delectus qui corrupti. Ipsam!
+      </p>
+    </div>
+
+    <input type="text" placeholder="Họ và tên" class="fullname" />
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box h2 ~ p,
+      .box h2 ~ div p {
+        color: red;
+      }
+
+      /* .box h2 ~ div p {
+        color: red;
+      } */
+      /* 
+      .box p + h2 {
+        color: red;
+      } */
+
+      /* .box p + h2, */
+      .box h2 + h2 {
+        color: red;
+      }
+
+      .todos input:checked ~ span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box">
+      <p>Hoàng An</p>
+      <h2>F8</h2>
+      <p>Hoàng An</p>
+      <h3>Fullstack</h3>
+      <div>
+        <p>Hoàng An</p>
+      </div>
+    </div> -->
+    <div class="box">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore eos doloremque dolore dignissimos sed neque voluptatum ad, consequatur sunt hic, soluta
+        magnam nihil, modi rem quas voluptate magni aut vitae?
+      </p>
+
+      <h2>Hoàng An 1</h2>
+      <h2>Hoàng An 2</h2>
+      <h2>Hoàng An 3</h2>
+      <h2>Hoàng An 4</h2>
+    </div>
+
+    <div class="todos">
+      <div>
+        <label>
+          <input type="checkbox" />
+          <span>Công việc 1</span>
+        </label>
+      </div>
+      <div>
+        <label>
+          <input type="checkbox" />
+          <span>Công việc 2</span>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>
