@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/fapro/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lobster&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p class="title">Hi there</p>
+      <p class="sub-title">
+        <span>We'd like to hear from you.</span> Send us your message or just say hy with our contact form or directly via phone, we love to chat.
+      </p>
+      <form action="">
+        <div class="form-field">
+          <label for="yourname"><i class="fa-solid fa-user"></i></label>
+          <input id="yourname" type="text" name="yourname" placeholder="Your Name" required />
+          <span class="popper">Enter your name</span>
+          <button><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="form-field">
+          <label for="youremail"><i class="fa-solid fa-envelope"></i></label>
+          <input id="youremail" type="email" name="youremail" placeholder="your@domain.com" required />
+          <span class="popper">Enter your email</span>
+          <button><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="form-field">
+          <label for="phonenumber"><i class="fa-regular fa-mobile"></i></label>
+          <input id="phonenumber" type="text" name="phonenumber" placeholder="+44 00 123" />
+          <span class="popper">Enter your phone number</span>
+          <button><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="form-field">
+          <label for="subject"><i class="fa-regular fa-book-blank"></i></label>
+          <!-- <input id="subject" type="text" name="subject" placeholder="Subject" required /> -->
+          <select name="subject" id="" subject required>
+            <option value="">Subject</option>
+            <option value="">VueJS</option>
+            <option value="">RectJS</option>
+          </select>
+          <span class="popper">Select your subject</span>
+        </div>
+        <div class="form-field">
+          <label for="message"><i class="fa-regular fa-message"></i></label>
+          <textarea id="message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>
+          <span class="popper">Enter your message</span>
+        </div>
+
+        <div class="form-action">
+          <label>
+            <input type="checkbox" name="acopy" id="acopy" />
+            <span>Send me a copy of this message</span>
+          </label>
+          <button type="submit">SEND</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

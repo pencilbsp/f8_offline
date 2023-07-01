@@ -1,0 +1,209 @@
+:root {
+  --primary-color: #dcdcdc;
+  --second-color: #333333;
+  --orange-color: #ea4033;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* TITLE */
+
+.title {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.sub-title > span {
+  color: var(--orange-color);
+}
+
+/* FORM */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* ---> FORM FIELD */
+
+.form-field {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border: 1px solid var(--primary-color);
+  border-left: none;
+  background-color: var(--primary-color);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+select {
+  appearance: none;
+  background-image: url("/assets/up-and-down-arrows.svg");
+  background-repeat: no-repeat;
+  background-position: right 1rem top 50%;
+  background-size: 0.85rem auto;
+}
+
+.form-field > button {
+  display: none;
+  border: none;
+  position: absolute;
+  right: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+.form-field:nth-child(5) {
+  align-items: start;
+}
+
+.form-field:nth-child(5) label {
+  margin-top: 0.75rem;
+}
+
+.form-field:has(> input:focus),
+.form-field:has(> input:active),
+.form-field:hover {
+  border: 1px solid var(--second-color);
+  border-left: none;
+  background-color: var(--second-color);
+}
+
+.form-field:has(> input:required)::after,
+.form-field:has(> textarea:required)::after {
+  content: "\f005";
+  position: absolute;
+  color: var(--primary-color);
+  top: 1.25rem;
+  right: 1rem;
+  font-family: "Font Awesome 6 Pro";
+  font-size: 0.5rem;
+  font-weight: 900;
+}
+
+.form-field:has(> input:focus)::after,
+.form-field:has(> input:active)::after {
+  display: none;
+}
+
+.form-field:has(> input:active) > button,
+.form-field:has(> input:focus) > button {
+  display: block;
+}
+
+.popper {
+  display: none;
+  position: absolute;
+  padding: 1rem;
+  color: white;
+  background-color: var(--second-color);
+  top: -4.5rem;
+  left: 2rem;
+}
+
+.popper::after {
+  content: "";
+  bottom: -1.6rem;
+  left: 50%;
+  height: 0;
+  width: 0;
+  position: absolute;
+  background-color: transparent;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+  border-top: 0.6rem solid var(--second-color);
+  transform: translateX(-50%);
+}
+
+form textarea:active + .popper,
+form textarea:focus + .popper,
+form select:active + .popper,
+form select:focus + .popper,
+form input:active + .popper,
+form input:focus + .popper {
+  display: initial;
+}
+
+label i {
+  width: 50px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.form-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-action label {
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+}
+
+.form-action button {
+  background-color: #ea4033;
+  color: white;
+  border: none;
+  padding: 0.75rem 3rem;
+  cursor: pointer;
+}
+
+.form-action label input[type="checkbox"] {
+  appearance: none;
+  background-color: white;
+  margin: 0;
+  font: inherit;
+  width: 1.75em;
+  height: 1.75em;
+  border: 0.15em solid var(--primary-color);
+  border-radius: 0;
+  transform: translateY(-0.075em);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.5rem;
+}
+
+.form-action label input[type="checkbox"]::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Pro";
+  font-weight: bold;
+  font-size: 1.15rem;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+
+.form-action label input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}

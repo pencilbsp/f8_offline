@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/assets/fapro/all.min.css" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+      }
+
+      .container {
+        max-width: 640px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      label {
+        display: flex;
+        width: 100%;
+        background-color: #d95925;
+        color: white;
+        padding: 0.5rem 1rem;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+      }
+
+      label > span {
+        margin-left: 0.5rem;
+      }
+
+      .content {
+        overflow: hidden;
+        height: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        padding: 0rem;
+      }
+
+      input:checked + label + .content {
+        height: auto;
+        padding: 1rem;
+      }
+
+      input:checked + label > i::before {
+        content: "\f068";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="checkbox" id="state-1" hidden />
+      <label for="state-1">
+        <i class="fa-solid fa-plus"></i>
+        <span>How to set radom colors?</span>
+      </label>
+      <div class="content">
+        <p>To set random colors:</p>
+        <p>1&#41; Add jag-faq-random-colors class.</p>
+        <p>2&#41; To change color, open theme(num).css, find "jag-fag-random-colors".</p>
+        <p>
+          3&#41; You can change color from here. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut
+        </p>
+      </div>
+
+      <input type="checkbox" id="state-2" hidden />
+      <label for="state-2">
+        <i class="fa-solid fa-plus"></i>
+        <span>How to use theme colors and add new theme color?</span>
+      </label>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A nam dicta laboriosam cum. Tempore minima, ducimus neque at, doloremque eius necessitatibus
+          exercitationem illum saepe sunt quibusdam quos, possimus perspiciatis veniam.
+        </p>
+      </div>
+
+      <input type="checkbox" id="state-3" hidden />
+      <label for="state-3">
+        <i class="fa-solid fa-plus"></i>
+        <span>How to change icon?</span>
+      </label>
+      <div class="content">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A nam dicta laboriosam cum. Tempore minima, ducimus neque at, doloremque eius necessitatibus
+          exercitationem illum saepe sunt quibusdam quos, possimus perspiciatis veniam.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

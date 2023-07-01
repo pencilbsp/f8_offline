@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+      }
+
+      .container {
+        max-width: 960px;
+        padding: 2rem;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.25rem;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      }
+
+      .icon {
+        width: 6rem;
+        height: 6rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #f2a93b;
+        margin-bottom: 1rem;
+      }
+
+      .icon img {
+        filter: invert(77%) sepia(77%) saturate(1163%) hue-rotate(330deg) brightness(100%) contrast(91%);
+        width: 3rem;
+        height: 3rem;
+      }
+
+      .item p {
+        margin: 1.5rem 0;
+      }
+
+      .item button {
+        padding: 0.75rem 1rem;
+        background-color: #f2a93b;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Take a lock at our services</h2>
+      <p>Duis fringilla erat sit amet sapien dignissim hendrerit vel sit amet libero.</p>
+
+      <div class="services">
+        <div class="item">
+          <div class="icon">
+            <img src="/assets/icons/camera.svg" alt="Photography" />
+          </div>
+          <h3>Photography</h3>
+          <p>Present vitae ligula nulla. Curabitur porta dolor vitae felis vestibulum.</p>
+          <button>Read More</button>
+        </div>
+        <div class="item">
+          <div class="icon">
+            <img src="/assets/icons/laptop.svg" alt="Photography" />
+          </div>
+          <h3>Web Designing</h3>
+          <p>Praesent vitae ligula nulla. Curabitur porta dolor vitae felis vestibulum.</p>
+          <button>Read More</button>
+        </div>
+        <div class="item">
+          <div class="icon">
+            <img src="/assets/icons/video-camera.svg" alt="Photography" />
+          </div>
+          <h3>Videography</h3>
+          <p>Praesent vitae ligula nulla. Curabitur porta dolor vitae felis vestibulum.</p>
+          <button>Read More</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
