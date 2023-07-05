@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        color: #666;
+        display: flex;
+        gap: 0.45rem;
+        align-items: center;
+        text-decoration: none;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem;
+      }
+
+      .menu {
+        display: flex;
+        border: 1px solid rgba(118, 118, 118, 0.4);
+      }
+
+      .menu-item {
+        padding: 0.25rem;
+      }
+
+      .menu-item:not(:last-child) {
+        border-right: 1px solid rgba(118, 118, 118, 0.4);
+      }
+
+      .menu-item > a {
+        padding: 0.5rem 1rem;
+      }
+
+      .menu-item > a:hover {
+        background-color: #2da5da;
+        color: #fff;
+      }
+
+      .menu-empty {
+        flex: 1;
+      }
+
+      .with-dropdown {
+        position: relative;
+      }
+
+      .with-dropdown > a::after {
+        content: "\f107";
+        font-family: "Font Awesome 6 Pro";
+        font-size: 0.75rem;
+      }
+
+      .dropdown-menu {
+        display: none;
+        visibility: hidden;
+        position: absolute;
+        box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+        background-color: #fff;
+        left: 0;
+        top: 100%;
+        min-width: 10rem;
+        margin-top: 0.5rem;
+        z-index: 1;
+      }
+
+      .with-dropdown:hover > .dropdown-menu {
+        display: block;
+        visibility: visible;
+      }
+
+      .dropdown-menu::before {
+        content: "";
+        width: 0.625rem;
+        height: 0.625rem;
+        display: inline-block;
+        position: absolute;
+        background-color: #fff;
+        left: 1.5rem;
+        transform: rotate(45deg) translateX(-50%);
+      }
+
+      .dropdown-menu > li:not(:last-child) {
+        border-bottom: 1px solid rgba(118, 118, 118, 0.4);
+      }
+
+      .dropdown-menu > li a {
+        padding: 0.75rem 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="menu">
+        <li class="menu-item">
+          <a href="/"><i class="fa-solid fa-house-chimney"></i></a>
+        </li>
+        <li class="menu-item">
+          <a href="/">
+            <i class="fa-solid fa-star"></i>
+            <span>About us</span>
+          </a>
+        </li>
+        <li class="menu-item with-dropdown">
+          <a href="#">
+            <i class="fa-solid fa-newspaper"></i>
+            <span>News</span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+                <span>Company</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+                <span>Products</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+                <span>Specials</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item with-dropdown">
+          <a href="/">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Portfolio</span>
+          </a>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+                <span>Company</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+                <span>Products</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+                <span>Specials</span>
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item">
+          <a href="/">
+            <i class="fa-solid fa-blog"></i>
+            <span>Blog</span>
+          </a>
+        </li>
+        <li class="menu-item menu-empty"></li>
+        <li class="menu-item">
+          <a href="/">
+            <i class="fa-solid fa-phone"></i>
+            <span>Contacts</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

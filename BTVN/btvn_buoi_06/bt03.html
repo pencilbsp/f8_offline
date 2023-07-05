@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Login</title>
+    <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --text-color: #717171;
+        --primary-color: #ff574d;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Nunito", sans-serif;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      input::placeholder {
+        font-size: 1rem;
+      }
+
+      .flex-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-image: url("../../assets/login-bg2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .container {
+        max-width: 780px;
+        padding: 2rem;
+      }
+
+      .wrap {
+        display: flex;
+        border-radius: 0.75rem;
+        background-color: white;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      .introduce {
+        flex: 1;
+        color: white;
+        text-align: center;
+        background-color: var(--primary-color);
+        min-height: 28rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        flex-direction: column;
+        row-gap: 2rem;
+        position: relative;
+        border-top-left-radius: 0.75rem;
+        border-bottom-left-radius: 0.75rem;
+      }
+
+      .introduce > a {
+        padding: 0.5rem 2rem;
+        background-color: white;
+        border-radius: 0.25rem;
+        color: var(--primary-color);
+      }
+
+      .heading {
+        font-size: 2rem;
+      }
+
+      .heading > b {
+        padding: 0.1rem 0.6rem;
+        background-color: white;
+        border-radius: 0.25rem;
+        color: var(--primary-color);
+      }
+
+      .social-list {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .social-list a {
+        color: white;
+        width: 2.25rem;
+        height: 2.25rem;
+        background-color: #da5c4e;
+        border-radius: 0.25rem;
+      }
+
+      .form {
+        width: 55%;
+        transition: width 500ms ease-in-out;
+      }
+
+      .login-form {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        row-gap: 1.25rem;
+        background-color: white;
+        padding: 2.5rem;
+        text-align: center;
+        color: var(--text-color);
+        justify-content: center;
+        flex-wrap: wrap;
+        white-space: nowrap;
+        overflow: hidden;
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+      }
+
+      .login-form a {
+        color: var(--text-color);
+      }
+
+      .login-form > input {
+        padding: 0.75rem 1rem;
+        border: 0.15rem solid #e9e9e9;
+        border-radius: 0.25rem;
+      }
+
+      .login-form h3 {
+        color: black;
+        font-size: 1.5rem;
+        position: relative;
+        margin-bottom: 1rem;
+      }
+
+      .login-form h3::after {
+        content: "";
+        display: inline-block;
+        height: 1px;
+        width: 3rem;
+        background-color: var(--primary-color);
+        position: absolute;
+        left: 50%;
+        bottom: -0.75rem;
+        transform: translateX(-50%);
+      }
+
+      .login-form h3 > span {
+        color: var(--primary-color);
+      }
+
+      .form-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .form-group input,
+      .form-group label {
+        cursor: pointer;
+      }
+
+      .form-group label span {
+        margin-left: 0.5rem;
+      }
+
+      .form-group label input[type="checkbox"] {
+        appearance: none;
+        background-color: white;
+        margin: 0;
+        font: inherit;
+        width: 1.15rem;
+        height: 1.15rem;
+        border: 0.15rem solid #e9e9e9;
+        border-radius: 0.25rem;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .form-group label input[type="checkbox"]::before {
+        content: "\f00c";
+        font-family: "Font Awesome 6 Pro";
+        font-size: 1rem;
+        color: var(--primary-color);
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+      }
+
+      .form-group label input[type="checkbox"]:checked::before {
+        transform: scale(1);
+      }
+
+      .login-form > button {
+        color: white;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border: none;
+        background-color: var(--primary-color);
+        border-radius: 0.25rem;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .appaer-btn {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        border: none;
+        background-color: white;
+        color: var(--primary-color);
+        cursor: pointer;
+        top: 50%;
+        right: 0;
+        transform: translate(50%, -50%);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        z-index: 3;
+        transition-delay: 300ms;
+        transition-property: transform;
+        transition-timing-function: ease-in-out;
+        transition-duration: 500ms;
+      }
+
+      input#appaer:checked ~ .form {
+        width: 0;
+        visibility: hidden;
+      }
+
+      input#appaer:checked ~ .introduce {
+        border-top-right-radius: 0.75rem;
+        border-bottom-right-radius: 0.75rem;
+      }
+
+      input#appaer:checked ~ .introduce > label {
+        transform: translate(50%, -50%) rotate(180deg);
+        /* transform-origin: center center; */
+      }
+    </style>
+  </head>
+  <body class="flex-center">
+    <div class="container">
+      <div class="wrap">
+        <input style="display: none" type="checkbox" name="appaer" id="appaer" />
+
+        <div class="introduce flex-center">
+          <h2 class="heading">
+            <b>JL</b>
+            Just Log
+          </h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eismod tempor incididunt Lorem Ipsum</p>
+          <a href="#">Read More</a>
+          <ul class="social-list">
+            <li>
+              <a class="flex-center" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a class="flex-center" href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a class="flex-center" href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+            </li>
+            <li>
+              <a class="flex-center" href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+          </ul>
+          <label for="appaer" class="appaer-btn flex-center">
+            <i class="fa-solid fa-right"></i>
+          </label>
+        </div>
+
+        <div class="form">
+          <form class="login-form" action="">
+            <h3>Login to <span>your account</span></h3>
+            <input type="email" placeholder="Email Address" required />
+            <input type="password" placeholder="Password" required />
+            <div class="form-group">
+              <label class="flex-center">
+                <input type="checkbox" name="" id="" />
+                <span>Remember me</span>
+              </label>
+              <a href="#">Forgot Password</a>
+            </div>
+            <button type="submit">LOGIN</button>
+            <a href="#">Don't have account? Register here</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
