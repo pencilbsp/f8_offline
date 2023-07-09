@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      .box {
+        width: 700px;
+        padding: 16px;
+        border: 1px solid red;
+      }
+
+      .box::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      .box img {
+        object-fit: cover;
+        float: left;
+        padding-right: 10px;
+        /* padding-bottom: 10px; */
+        border-radius: 50%;
+        shape-outside: circle(50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img
+        width="250"
+        height="250"
+        src="https://images.unsplash.com/photo-1688408958776-00a5c1b17c8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3072&q=80"
+        alt=""
+      />
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio perferendis recusandae, animi eligendi at, quod tempora sunt, magnam aliquam deleniti eum
+        inventore beatae voluptas delectus facilis repellendus sit ea! Molestiae nobis reiciendis, facere recusandae quod animi inventore, voluptates, sapiente
+        alias nam incidunt eveniet hic nihil pariatur laboriosam porro magnam repudiandae quibusdam quis doloremque neque blanditiis! Unde, quos. Molestias,
+        suscipit. Aliquam dignissimos asperiores pariatur nulla odit animi, recusandae quibusdam neque, voluptatibus dolore nisi nobis molestias eveniet in
+        dolores ex totam molestiae officia ut quos, aliquid qui natus accusamus iure! Eaque repellat cumque vitae, in id, tempora natus commodi ipsam sequi
+        dolores reprehenderit est illo, iure doloremque aliquam necessitatibus tenetur? Vero nobis explicabo voluptatibus doloribus nulla laboriosam adipisci,
+        magnam dolorum neque dolor voluptatem, repellat quos nesciunt officiis eveniet sed enim aspernatur id numquam expedita sequi reiciendis iure. In
+        repudiandae tempora nam ullam culpa, ea consequuntur at beatae atque! Possimus quaerat ipsam atque adipisci, ullam vitae ratione nobis quae rerum dicta
+        repellat obcaecati quas quis unde amet cupiditate labore aut harum soluta, porro asperiores! Suscipit eos laboriosam nemo dolorum unde iusto voluptates,
+        nulla magnam rem consequuntur ipsum neque qui earum vel consectetur? Sapiente, sed temporibus accusamus deserunt voluptatum voluptatibus nam. Omnis,
+        voluptatum asperiores.
+      </p>
+    </div>
+  </body>
+</html>

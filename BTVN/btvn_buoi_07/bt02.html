@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile chủ đầu tư</title>
+  <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Asap", sans-serif;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 1rem;
+    }
+
+    .wrapper {
+      width: 100%;
+      position: relative;
+    }
+
+    .cover img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 32/9;
+      object-position: center;
+    }
+
+    .profile {
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 0 3rem;
+    }
+
+    .profile-avatar {
+      display: flex;
+      flex-shrink: 0;
+      width: 10rem;
+      height: 10rem;
+      padding: 0.5rem;
+      border-radius: 0.25rem 0.25rem 0 0;
+      overflow: hidden;
+      align-items: center;
+      background-color: white;
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .profile-info {
+      flex: 1;
+      color: white;
+      padding: 1.5rem 1rem;
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .profile-info .bio {
+      margin-top: 1.5rem;
+    }
+
+    .profile-info .bio span:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    .profile-info .bio span>strong {
+      font-size: 1.75rem;
+    }
+
+    .nav-tab {
+      display: flex;
+      gap: 1rem;
+      justify-content: flex-end;
+      padding: 0 3rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav-tab>input {
+      display: none;
+    }
+
+    .tab-btn {
+      cursor: pointer;
+      color: #de6860;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      position: relative;
+    }
+
+    input:checked+.tab-btn::after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+      height: 3px;
+      position: absolute;
+      background-color: #de6860;
+      left: 0;
+      bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="cover">
+        <img src="https://ircdn.vingroup.net/storage/Uploads/Photos/Landmark81banner.jpg" alt="Vingroup Cover" />
+      </div>
+      <div class="profile">
+        <div class="profile-avatar">
+          <img src="https://vingroup.net/assets/images/logo.png" alt="Vingroup Avatar" />
+        </div>
+        <div class="profile-info">
+          <h1 class="name">Tập đoàn Vingroup</h1>
+          <div class="bio">
+            <span>Năm thành lập: <strong>1993</strong></span>
+            <span>Dự án đã đầu tư: <strong>35</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="nav-tab">
+      <input type="radio" name="tab-active" id="about" checked />
+      <label for="about" class="tab-btn">Giới thiệu</label>
+
+      <input type="radio" name="tab-active" id="project" />
+      <label for="project" class="tab-btn">Dự án đã đầu tư</label>
+
+      <input type="radio" name="tab-active" id="contact" />
+      <label for="contact" class="tab-btn">Liên hệ</label>
+    </div>
+
+  </div>
+</body>
+
+</html>

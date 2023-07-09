@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .songs {
+        width: 300px;
+        margin: 30px auto;
+        border: 1px solid red;
+
+        counter-reset: song-item;
+      }
+
+      .item {
+        padding: 10px 20px;
+        border-bottom: 1px solid #ccc;
+        counter-increment: song-item;
+      }
+
+      .item::before {
+        content: "#" counter(song-item);
+        color: white;
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        background-color: green;
+        line-height: 30px;
+        float: left;
+        margin-right: 5px;
+      }
+
+      .chidren {
+        counter-reset: chidren-song;
+      }
+
+      .chidren > .item {
+        counter-increment: chidren-song;
+        margin-left: 20px;
+      }
+
+      .chidren > .item::before {
+        content: "#" counter(song-item) "." counter(chidren-song);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="songs">
+      <div class="item">
+        <h2>Bài hát 1</h2>
+        <p>Thời lượng: 04:19</p>
+      </div>
+      <div class="item">
+        <h2>Bài hát 2</h2>
+        <p>Thời lượng: 04:19</p>
+      </div>
+
+      <div class="chidren">
+        <div class="item">
+          <h2>Bài hát 2.1</h2>
+          <p>Thời lượng: 04:19</p>
+        </div>
+        <div class="item">
+          <h2>Bài hát 2.2</h2>
+          <p>Thời lượng: 04:19</p>
+        </div>
+        <div class="item">
+          <h2>Bài hát 2.3</h2>
+          <p>Thời lượng: 04:19</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <h2>Bài hát 3</h2>
+        <p>Thời lượng: 04:19</p>
+      </div>
+      <div class="item">
+        <h2>Bài hát 4</h2>
+        <p>Thời lượng: 04:19</p>
+      </div>
+    </div>
+  </body>
+</html>

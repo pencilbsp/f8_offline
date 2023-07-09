@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .songs,
+      .box {
+        width: 300px;
+        margin: 30px auto;
+        border: 1px solid red;
+      }
+
+      .box ul {
+        list-style-position: inside;
+        list-style-type: circle;
+      }
+
+      .songs h2 {
+        display: list-item;
+        list-style: inside decimal-leading-zero;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+      </ul>
+    </div>
+
+    <div class="songs">
+      <h2>Bài hát 1</h2>
+      <h2>Bài hát 2</h2>
+      <h2>Bài hát 3</h2>
+      <h2>Bài hát 4</h2>
+    </div>
+  </body>
+</html>

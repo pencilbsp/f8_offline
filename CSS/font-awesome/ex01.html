@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .social {
+        width: 300px;
+        margin: 30px auto;
+        list-style: none;
+        padding: 10px;
+        border: 1px solid red;
+      }
+
+      .social li {
+        border-bottom: 1px solid #ccc;
+        line-height: 1.5;
+      }
+
+      .social li::before {
+        content: "";
+        width: 25px;
+        display: inline-block;
+        height: 25px;
+        color: white;
+        background-color: green;
+        line-height: 25px;
+        text-align: center;
+        border-radius: 50%;
+        vertical-align: middle;
+        font-family: "Font Awesome 6 Brands";
+      }
+
+      li.facebook::before {
+        content: "\f39e";
+      }
+      li.twitter::before {
+        content: "\f099";
+      }
+      li.youtube::before {
+        content: "\f167";
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="social">
+      <li class="facebook">Facebook</li>
+      <li class="twitter">Twitter</li>
+      <li class="youtube">Youtube</li>
+    </ul>
+  </body>
+</html>

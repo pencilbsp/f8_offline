@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khu vực bất động sản</title>
+  <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@100;300;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Asap", sans-serif;
+      font-weight: 300;
+    }
+
+    h2,
+    h3,
+    strong {
+      font-weight: 500;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 1rem;
+    }
+
+    .discover h2 {
+      margin: 1.5rem 0;
+      display: flex;
+      align-items: center;
+      text-transform: uppercase;
+    }
+
+    .discover h2::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background-color: #E4E4E4;
+      margin-left: 1rem;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .tab-menu>input {
+      display: none;
+    }
+
+    .tab-menu>label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #E4E4E4;
+      border-radius: 10rem;
+      padding: 0.5rem 1.25rem;
+      cursor: pointer;
+    }
+
+    .tab-menu>label span:first-child {
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .tab-menu>label span:last-child {
+      font-style: italic;
+    }
+
+    .tab-menu>input:checked+label {
+      color: white;
+      background-color: #AE7C38;
+    }
+
+    .tab-content {
+      margin-top: 1.5rem;
+    }
+
+    .project-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1.5rem;
+    }
+
+    .project {
+      overflow: hidden;
+      border-radius: 0.5rem;
+      position: relative;
+    }
+
+    .project-cover img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 5/3;
+      object-fit: cover;
+    }
+
+    .project-info {
+      color: white;
+      position: absolute;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      inset: 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-info h3 {
+      font-size: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <section class="discover">
+      <h2>Khám phá bất động sản các khu vực nổi bật</h2>
+
+      <div class="tabs">
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-1" checked>
+          <label for="tab-1">
+            <span>Hồ Chí Minh</span>
+            <span>50.317 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-2">
+          <label for="tab-2">
+            <span>Hà Nội</span>
+            <span>18.767 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-3">
+          <label for="tab-3">
+            <span>Bình Dương</span>
+            <span>7.051 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-4">
+          <label for="tab-4">
+            <span>Đồng Nai</span>
+            <span>4.251 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-5">
+          <label for="tab-5">
+            <span>Bà Rịa Vũng Tàu</span>
+            <span>3.968 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-6">
+          <label for="tab-6">
+            <span>Đà Nẵng</span>
+            <span>3.680 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-7">
+          <label for="tab-7">
+            <span>Long An</span>
+            <span>2.835 bất động sản</span>
+          </label>
+        </div>
+
+        <div class="tab-menu">
+          <input type="radio" name="tab" id="tab-8">
+          <label for="tab-8">
+            <span>Quảng Ninh</span>
+            <span>2.490 bất động sản</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="tab-content">
+        <div class="project-list">
+          <div class="project">
+            <div class="project-cover">
+              <img src="https://nasaland.vn/wp-content/uploads/2022/09/Quan-2-1.jpg" alt="Quận 2">
+            </div>
+            <div class="project-info">
+              <h3>Quận 2</h3>
+              <span><strong>4.186</strong> bất động sản</span>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-cover">
+              <img src="https://smartland.vn/wp-content/uploads/2021/10/celesta-rise-nam-lien-ke-phu-my-hung.jpg"
+                alt="Quận 7">
+            </div>
+            <div class="project-info">
+              <h3>Quận 7</h3>
+              <span><strong>4.186</strong> bất động sản</span>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-cover">
+              <img src="https://thuanhunggroup.com/wp-content/uploads/2021/09/Qua%CC%A3%CC%82n-9-TPHCM.png"
+                alt="Quận 9">
+            </div>
+            <div class="project-info">
+              <h3>Quận 9</h3>
+              <span><strong>4.186</strong> bất động sản</span>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-cover">
+              <img src="https://www.thitruong.today/uploads/files/2022/02/12/can-ho-gia-re-quan-tan-binh-2.jpg"
+                alt="Quận Tân Bình">
+            </div>
+            <div class="project-info">
+              <h3>Quận Tân Bình</h3>
+              <span><strong>4.186</strong> bất động sản</span>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-cover">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/1/15/Ch%E1%BB%A3_Th%E1%BB%A7_%C4%90%E1%BB%A9c.jpg"
+                alt="Thành phố Thử Đức">
+            </div>
+            <div class="project-info">
+              <h3>Thành phố Thử Đức</h3>
+              <span><strong>4.186</strong> bất động sản</span>
+            </div>
+          </div>
+          <div class="project">
+            <div class="project-cover">
+              <img src="https://file4.batdongsan.com.vn/2021/02/26/akCJKkFO/20210226221911-d266.jpg"
+                alt="Huyện Bình Chánh">
+            </div>
+            <div class="project-info">
+              <h3>Huyện Bình Chánh</h3>
+              <span><strong>4.186</strong> bất động sản</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+
+</html>

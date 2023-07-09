@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .product {
+        margin: 0 auto;
+        position: relative;
+        width: 300px;
+        border: 1px solid #999;
+      }
+
+      .image {
+        position: relative;
+        width: 100%;
+      }
+
+      .product img {
+        width: 100%;
+        /* aspect-ratio: 16/9; */
+        object-fit: cover;
+        display: block;
+      }
+
+      .product-info {
+        padding: 5px;
+      }
+
+      .sale {
+        background-color: red;
+        color: white;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-radius: 3px;
+        padding: 3px 5px;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+      }
+
+      .product:hover .overlay {
+        display: initial;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="product">
+      <div class="image">
+        <div class="overlay"></div>
+        <span class="sale">-30%</span>
+        <!-- <img
+          src="https://images.unsplash.com/photo-1685513801505-61f89d071e5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+          alt="" -->
+        <!-- /> -->
+        <img
+          src="https://images.unsplash.com/photo-1687985190469-ed3e48b0a745?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80"
+          alt=""
+        />
+      </div>
+      <div class="product-info">
+        <h3>Sản phẩm 1</h3>
+        <p>Giá: 12.000 đ</p>
+      </div>
+    </div>
+  </body>
+</html>
