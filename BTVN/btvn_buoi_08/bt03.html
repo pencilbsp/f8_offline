@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .services {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .service-list {
+      /* display: grid;
+      grid-gap: 2rem;
+      grid-template-columns: repeat(3, 1fr); */
+      margin-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+
+    .service {
+      flex: 1;
+      flex-basis: calc(100% / 3 - 2rem);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1rem;
+    }
+
+    .services h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service img {
+      width: 5rem;
+    }
+
+    .service p {
+      flex: 1;
+    }
+
+    .service a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background-color: #28378e;
+      padding: 0.75rem 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="container services">
+    <h2>Our Special Services</h2>
+    <p>Join Our Beauty Clun And Be Beautiful in Unicode Academy</p>
+
+    <div class="service-list">
+      <div class="service">
+        <img src="../../assets/images/wheel.png" alt="" />
+        <h3>Engine Overhaul</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quas sed optio ut libero, vitae
+          nihil. Asperiores nulla et dolores nesciunt
+          in nihil officiis alias deleniti. Ipsam, eaque nisi! Asperiores.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="service">
+        <img src="../../assets/images/steering-wheel.png" alt="" />
+        <h3>Power Steering</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quas sed optio ut libero, vitae
+          nihil.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="service">
+        <img src="../../assets/images/oil-tank.png" alt="" />
+        <h3>Oil Change</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quas sed optio ut libero, vitae
+          nihil. Asperiores nulla et dolores nesciunt
+          in nihil officiis alias deleniti. Ipsam, eaque nisi! Asperiores.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="service">
+        <img src="../../assets/images/car.png" alt="" />
+        <h3>Smog Check</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, voluptatem quam beatae assumenda dolorum quibusdam!
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="service">
+        <img src="../../assets/images/car-wash.png" alt="" />
+        <h3>Tyre Balancing</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus quas sed optio ut libero, vitae
+          nihil. Asperiores nulla et dolores nesciunt
+          in nihil officiis alias deleniti. Ipsam, eaque nisi! Asperiores.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="service">
+        <img src="../../assets/images/fleet.png" alt="" />
+        <h3>Fleet Service</h3>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero assumenda unde aspernatur? Incidunt dolores labore voluptate eaque est blanditiis tempore?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

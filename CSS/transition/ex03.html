@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .switch {
+      display: block;
+      margin: 0 auto;
+      background-color: grey;
+      width: 60px;
+      height: 30px;
+      border-radius: 99px;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: block;
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      transition: left 400ms ease;
+    }
+
+    .bg {
+      position: absolute;
+      inset: 0;
+      border-radius: 99px;
+      background-color: transparent;
+      transition: background-color 400ms ease;
+    }
+
+    input:checked+.btn {
+      left: calc(100% - 30px);
+    }
+
+    input:checked~.bg {
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <label class="switch">
+    <input type="checkbox" hidden>
+    <span class="btn"></span>
+    <span class="bg"></span>
+  </label>
+</body>
+
+</html>
