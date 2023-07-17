@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      border: 1px solid red;
+      padding: 30px;
+    }
+
+    .box {
+      width: 200px;
+      height: 200px;
+      background: green;
+      margin: 0 auto;
+      transition: all 400ms ease;
+      /* transform: skew(-10deg); */
+      color: white;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+    
+    .box::after {
+      content: attr(data-content);
+      position: absolute;
+    }
+
+    .container:hover .box {
+      /* transform: rotateX(180deg); */
+      /* rotate: 180deg; */
+      /* transform: scale(1.5, 1.2); */
+      /* scale: 1.2 1.5 */
+      /* transform: skew(-10deg); */
+      /* transform:  translate(100px, 100px); */
+      top: 100px;
+      left: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box" data-content="F8"></div>
+  </div>
+</body>
+</html>

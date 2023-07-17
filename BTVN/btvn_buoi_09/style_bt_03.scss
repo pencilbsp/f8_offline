@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.form {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+
+  > h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  > p {
+    margin-bottom: 2.5rem;
+  }
+
+  form {
+    display: flex;
+    row-gap: 1rem;
+    flex-direction: column;
+
+    .form-group {
+      display: flex;
+      column-gap: 1rem;
+      justify-content: center;
+
+      .input {
+        width: 100%;
+        border-radius: 0.35rem;
+        text-align: left;
+        padding: 0.25rem 1rem;
+        position: relative;
+        background-color: #fff;
+        border: 1px solid #d7d7d7;
+
+        &:has(input:focus),
+        &:has(select:focus),
+        &:has(textarea:focus) {
+          border-color: #4d77da;
+        }
+
+        label {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 100ms ease-in-out;
+          transform-origin: 0 0;
+          color: #999;
+        }
+
+        input,
+        select,
+        textarea {
+          display: block;
+          margin-top: 1.25rem;
+          margin-bottom: 0.25rem;
+          width: 100%;
+          border: none;
+          font-size: 1.1rem;
+
+          &:focus,
+          &:not(:placeholder-shown) {
+            outline: none;
+
+            + label {
+              top: 0.3rem;
+              transform: translateY(0) scale(0.85);
+            }
+          }
+
+          &:required {
+            + label::after {
+              content: "*";
+              margin-left: 0.25rem;
+            }
+          }
+        }
+
+        textarea {
+          + label {
+            top: 9%;
+          }
+        }
+      }
+
+      .select {
+        display: flex;
+        align-items: center;
+
+        select {
+          margin: 0;
+          color: #999;
+        }
+      }
+
+      button {
+        border: none;
+        color: #fff;
+        font-weight: 700;
+        background-color: #4d77da;
+        padding: 1rem 2rem;
+        border-radius: 9rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .loading {
+      display: flex;
+      align-items: flex-end;
+      gap: 0.5rem;
+      height: 3rem;
+    }
+
+    .loading span {
+      width: 1rem;
+      height: 3rem;
+      background-color: #00aaff;
+      border-radius: 0.25rem;
+      animation: pencil 1s ease-in-out infinite;
+      /* transition: height 400ms ease; */
+    }
+
+    .loading span:nth-child(2) {
+      animation-delay: 100ms;
+    }
+
+    .loading span:nth-child(3) {
+      animation-delay: 200ms;
+    }
+
+    .loading span:nth-child(4) {
+      animation-delay: 300ms;
+    }
+
+    @keyframes pencil {
+      from {
+        height: 3rem;
+      }
+
+      50% {
+        height: .75rem;
+      }
+
+      to {
+        height: 3rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="loading">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</body>
+
+</html>

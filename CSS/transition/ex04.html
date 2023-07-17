@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .title {
+      color: green;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .title>span {
+      color: red;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 100%;
+      transition: top 400ms ease;
+      overflow: hidden;
+    }
+
+    .title>span>span {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .title:hover>span {
+      top: 0;
+    }
+
+    div {
+      position: relative;
+      display: inline-block;
+      font-size: 2em;
+      color: green;
+      font-weight: 800;
+      overflow: hidden;
+    }
+
+    div::before {
+      position: absolute;
+      content: attr(data-content);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      color: red;
+      overflow: hidden;
+      transition: height 275ms ease;
+      height: 50%;
+      white-space: nowrap;
+    }
+
+    div:hover::before {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="title">
+    Học lập trình tại F8
+    <span><span>Học lập trình tại F8</span></span>
+  </h1>
+
+  <div data-content="Học lập trình tại F8">Học lập trình tại F8</div>
+  <!-- <h1 class="title2">Học lập trình tại F8</h1> -->
+</body>
+
+</html>

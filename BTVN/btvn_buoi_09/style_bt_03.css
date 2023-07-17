@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background-color: #f6f6f6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.form {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.form > h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+.form > p {
+  margin-bottom: 2.5rem;
+}
+.form form {
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+}
+.form form .form-group {
+  display: flex;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  justify-content: center;
+}
+.form form .form-group .input {
+  width: 100%;
+  border-radius: 0.35rem;
+  text-align: left;
+  padding: 0.25rem 1rem;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #d7d7d7;
+}
+.form form .form-group .input:has(input:focus), .form form .form-group .input:has(select:focus), .form form .form-group .input:has(textarea:focus) {
+  border-color: #4d77da;
+}
+.form form .form-group .input label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 100ms ease-in-out;
+  transform-origin: 0 0;
+  color: #999;
+}
+.form form .form-group .input input,
+.form form .form-group .input select,
+.form form .form-group .input textarea {
+  display: block;
+  margin-top: 1.25rem;
+  margin-bottom: 0.25rem;
+  width: 100%;
+  border: none;
+  font-size: 1.1rem;
+}
+.form form .form-group .input input:not(:-moz-placeholder-shown), .form form .form-group .input select:not(:-moz-placeholder-shown), .form form .form-group .input textarea:not(:-moz-placeholder-shown) {
+  outline: none;
+}
+.form form .form-group .input input:focus, .form form .form-group .input input:not(:placeholder-shown),
+.form form .form-group .input select:focus,
+.form form .form-group .input select:not(:placeholder-shown),
+.form form .form-group .input textarea:focus,
+.form form .form-group .input textarea:not(:placeholder-shown) {
+  outline: none;
+}
+.form form .form-group .input input:not(:-moz-placeholder-shown) + label, .form form .form-group .input select:not(:-moz-placeholder-shown) + label, .form form .form-group .input textarea:not(:-moz-placeholder-shown) + label {
+  top: 0.3rem;
+  transform: translateY(0) scale(0.85);
+}
+.form form .form-group .input input:focus + label, .form form .form-group .input input:not(:placeholder-shown) + label,
+.form form .form-group .input select:focus + label,
+.form form .form-group .input select:not(:placeholder-shown) + label,
+.form form .form-group .input textarea:focus + label,
+.form form .form-group .input textarea:not(:placeholder-shown) + label {
+  top: 0.3rem;
+  transform: translateY(0) scale(0.85);
+}
+.form form .form-group .input input:required + label::after,
+.form form .form-group .input select:required + label::after,
+.form form .form-group .input textarea:required + label::after {
+  content: "*";
+  margin-left: 0.25rem;
+}
+.form form .form-group .input textarea + label {
+  top: 9%;
+}
+.form form .form-group .select {
+  display: flex;
+  align-items: center;
+}
+.form form .form-group .select select {
+  margin: 0;
+  color: #999;
+}
+.form form .form-group button {
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  background-color: #4d77da;
+  padding: 1rem 2rem;
+  border-radius: 9rem;
+  cursor: pointer;
+}/*# sourceMappingURL=style_bt_03.css.map */
