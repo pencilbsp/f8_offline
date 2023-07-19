@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container .carousel {
+  display: flex;
+  background-color: #fff;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #ddd;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: auto;
+}
+.container .carousel .item {
+  padding: 0.25rem;
+}
+.container .carousel .item:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+.container .carousel .item label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1rem 2rem;
+}
+.container .carousel .item input {
+  display: none;
+}
+.container .carousel .item input:checked + label {
+  color: #fff;
+  background-color: #47a5df;
+}
+.container .carousel .item input:checked ~ .content3d {
+  opacity: 1;
+  visibility: visible;
+}
+.container .carousel .item input:checked ~ .content3d .content {
+  transform: rotateX(0deg);
+}
+.container .carousel .item:hover label {
+  color: #fff;
+  background-color: #47a5df;
+}
+.container .carousel .item .content3d {
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  perspective: 125rem;
+  transition-property: opacity, visibility;
+  transition-duration: 600ms;
+  transition-timing-function: ease-in-out;
+}
+.container .carousel .item .content3d .content {
+  padding: 1rem;
+  background-color: #fff;
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+  transition-property: transform;
+  transition-duration: 600ms;
+  transition-timing-function: ease-in-out;
+}/*# sourceMappingURL=style_02.css.map */
