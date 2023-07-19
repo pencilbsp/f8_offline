@@ -29,19 +29,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 225px;
-  cursor: pointer;
   position: relative;
+  width: 400px;
+  height: 200px;
+  cursor: pointer;
   background-color: #d0584c;
-  box-shadow: 10px 10px 10px rgba(17, 12, 46, 0.15);
   transition: transform 400ms ease-in-out;
+  box-shadow: 10px 10px 10px rgba(17, 12, 46, 0.15);
 }
 .box .envelope > span:nth-child(1) {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top right, #e06055 50%, transparent 50%);
   z-index: 1;
+  background: linear-gradient(to top right, #e06055 50%, transparent 50%);
   filter: drop-shadow(5px 5px 10px rgba(17, 12, 46, 0.15));
 }
 .box .envelope > span:nth-child(2) {
@@ -52,7 +52,11 @@ body {
   background-repeat: no-repeat;
   background-position: left, right;
   transform-origin: 0 0;
-  transition: transform 600ms ease-in-out;
+  transition-property: z-index, transform;
+  transition-duration: 400ms;
+  transition-timing-function: ease-in-out;
+  transition-delay: 400ms;
+  z-index: 1;
 }
 .box .envelope > span:nth-child(3) {
   position: absolute;
@@ -64,7 +68,7 @@ body {
 .box .envelope .letter {
   position: relative;
   width: 85%;
-  height: 0%;
+  height: 60%;
   background-color: #fff;
   transition-property: height, transform;
   transition-duration: 400ms;
@@ -99,17 +103,6 @@ body {
   opacity: 0.5;
   background: radial-gradient(4rem circle at 85% 70%, #e66e61 50%, transparent 50%);
 }
-.box .envelope:hover {
-  transform: translateY(30%);
-}
-.box .envelope:hover > span:nth-child(2) {
-  transform: rotateX(180deg);
-}
-.box .envelope:hover .letter {
-  height: 110%;
-  transform: translateY(-50%);
-  transition-delay: 400ms;
-}
 .box .shadown {
   position: absolute;
   top: 0;
@@ -122,6 +115,19 @@ body {
   border-radius: 99rem;
   transform: translate(-50%, 100%) rotateX(82.5deg);
   transition: width 400ms ease-in-out;
+}
+.box:hover .envelope {
+  transform: translateY(30%);
+}
+.box:hover .envelope > span:nth-child(2) {
+  transform: rotateX(180deg);
+  transition-delay: 0ms;
+  z-index: 0;
+}
+.box:hover .envelope .letter {
+  height: 110%;
+  transform: translateY(-50%);
+  transition-delay: 400ms;
 }
 .box:hover .shadown {
   width: 50%;

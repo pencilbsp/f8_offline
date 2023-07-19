@@ -29,21 +29,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 225px;
-    cursor: pointer;
     position: relative;
+    width: 400px;
+    height: 200px;
+    cursor: pointer;
     background-color: #d0584c;
+    transition: transform 400ms ease-in-out;
     box-shadow: 10px 10px 10px rgba(17, 12, 46, 0.15);
     $drop-shadow: drop-shadow(5px 5px 10px rgba(17, 12, 46, 0.15));
-    transition: transform 400ms ease-in-out;
 
     > span {
       &:nth-child(1) {
         position: absolute;
         inset: 0;
-        background: linear-gradient(to top right, #e06055 50%, transparent 50%);
         z-index: 1;
+        background: linear-gradient(to top right, #e06055 50%, transparent 50%);
         filter: $drop-shadow;
       }
 
@@ -55,7 +55,11 @@ body {
         background-repeat: no-repeat;
         background-position: left, right;
         transform-origin: 0 0;
-        transition: transform 600ms ease-in-out;
+        transition-property: z-index, transform;
+        transition-duration: 400ms;
+        transition-timing-function: ease-in-out;
+        transition-delay: 400ms;
+        z-index: 1;
       }
 
       &:nth-child(3) {
@@ -70,7 +74,7 @@ body {
     .letter {
       position: relative;
       width: 85%;
-      height: 0%;
+      height: 60%;
       background-color: #fff;
       transition-property: height, transform;
       transition-duration: 400ms;
@@ -112,22 +116,6 @@ body {
         background: radial-gradient(4rem circle at 85% 70%, #e66e61 50%, transparent 50%);
       }
     }
-
-    &:hover {
-      transform: translateY(30%);
-
-      > span {
-        &:nth-child(2) {
-          transform: rotateX(180deg);
-        }
-      }
-
-      .letter {
-        height: 110%;
-        transform: translateY(-50%);
-        transition-delay: 400ms;
-      }
-    }
   }
 
   .shadown {
@@ -145,6 +133,24 @@ body {
   }
 
   &:hover {
+    .envelope {
+      transform: translateY(30%);
+
+      > span {
+        &:nth-child(2) {
+          transform: rotateX(180deg);
+          transition-delay: 0ms;
+          z-index: 0;
+        }
+      }
+
+      .letter {
+        height: 110%;
+        transform: translateY(-50%);
+        transition-delay: 400ms;
+      }
+    }
+
     .shadown {
       width: 50%;
     }
