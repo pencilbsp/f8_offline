@@ -1,0 +1,46 @@
+
+.header {
+    .header-inner {
+        padding: 10px 0;
+
+        .logo {
+            max-width: 100%;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .menu {
+        background: green;
+        
+        ul {
+            display: flex;
+
+            li {
+                list-style: none;
+
+                a {
+                    display: block;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: grey;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 20px 0;
+
+    .copyright {
+        text-align: center;
+        color: gray;
+    }
+}

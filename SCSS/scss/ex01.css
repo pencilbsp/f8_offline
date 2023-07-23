@@ -1,0 +1,35 @@
+.header .header-inner {
+  padding: 10px 0;
+}
+.header .header-inner .logo {
+  max-width: 100%;
+  overflow: hidden;
+}
+.header .header-inner .logo img {
+  max-width: 100%;
+  height: auto;
+}
+.header .menu {
+  background: green;
+}
+.header .menu ul {
+  display: flex;
+}
+.header .menu ul li {
+  list-style: none;
+}
+.header .menu ul li a {
+  display: block;
+  text-decoration: none;
+}
+.header .menu ul li a:hover {
+  color: grey;
+}
+
+.footer {
+  padding: 20px 0;
+}
+.footer .copyright {
+  text-align: center;
+  color: gray;
+}/*# sourceMappingURL=ex01.css.map */
