@@ -1,0 +1,22 @@
+// Colors
+$bg-indigo: #615dfa;
+$bg-emerald: #23d2e2;
+$bg-white: #ffffff;
+
+$border-gray: #dedeea;
+$border-violet: #615dfa;
+
+$text-black: #3e3f5e;
+$text-gray: #adafca;
+$text-white: $bg-white;
+
+// Box shadow
+$shadow-sm: 0 0 60px 0 rgba(94, 92, 154, 0.12);
+
+// Breakpoints
+$breakpoints: (
+    sm: 641px,
+    md: 769px,
+    lg: 1025px,
+    xl: 1281px,
+);

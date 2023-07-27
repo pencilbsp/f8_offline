@@ -1,0 +1,29 @@
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    2xl: 1400px,
+);
+
+@mixin column($name: "") {
+    @for $i from 1 to 12 {
+        $prefix: ".col-";
+
+        @if ($name != "") {
+            $prefix: $prefix + $name + "-";
+        }
+
+        #{$prefix + $i} {
+            --column-size: #{$i};
+        }
+    }
+}
+
+@include column();
+
+@each $name, $size in $breakpoints {
+    @media (min-width: $size) {
+        @include column($name);
+    }
+}

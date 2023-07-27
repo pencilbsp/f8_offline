@@ -1,0 +1,23 @@
+$a: 4;
+$b: 10;
+$c: $a + $b;
+
+.text {
+    font-size: #{$c}px;
+}
+
+@if ($c % 2 != 0) {
+    .col-small {
+        font-size: #{$c * 2}px;
+    }
+} @else {
+    .col-medium {
+        font-size: #{$c * 4}px;
+    }
+}
+
+@if ($c >=10 and $c <= 20) {
+    .test {
+        font-size: #{$c / 2}px;
+    }
+}

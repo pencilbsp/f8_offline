@@ -1,0 +1,15 @@
+.container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container > * {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.container .box {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+}/*# sourceMappingURL=ex03.css.map */

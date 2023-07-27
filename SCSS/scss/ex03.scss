@@ -1,0 +1,97 @@
+// %section-base {
+//     padding: 16px 0;
+//     border: 1px solid #ccc;
+// }
+
+// .posts {
+//     @extend %section-base;
+//     background-color: gray;
+// }
+
+// .products {
+//     @extend %section-base;
+//     background-color: #ddd;
+// }
+
+// .menu {
+//     li {
+//         a {
+//             display: block;
+
+//             &.active {
+//                 color: green;
+//                 font-weight: 400;
+//             }
+
+//             &:hover {
+//                 @extend .active;
+//             }
+//         }
+//     }
+// }
+
+// // @mixin center {
+// //     max-width: 1200px;
+// //     margin: 0 auto;
+// // }
+
+// // .container {
+// //     @include center;
+// //     background-color: grey;
+// // }
+
+// @mixin position ($type, $x, $y) {
+//     position: absolute;
+//     @if ($type == tl) {
+//         top: $x;
+//         left: $y;
+//     } @else if ($type == tr) {
+//         top: $x;
+//         right: $x;
+//     } @else if ($type == bl) {
+//         bottom: $x;
+//         left: $x;
+//     } @else if ($type == br) {
+//         bottom: $x;
+//         right: $x;
+//     } @else {
+//         inset: 0;
+//     }
+// }
+
+@mixin center($type) {
+    @if ($type == display) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    } @else if ($type == position) {
+        position: relative;
+        > * {
+            position: absolute;
+            left: 50%;
+            // top: 50%;
+            transform: translateX(-50%);
+        }
+    } @else if ($type == text) {
+        text-align: center;
+        > * {
+            display: inline-block;
+        }
+    } @else if ($type == margin) {
+        > * {
+            margin: 0 auto;
+        }
+    }
+}
+
+.container {
+    @include center(position);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .box {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+    }
+}

@@ -1,0 +1,28 @@
+$number: 12;
+@for $i from 0 through $number - 1 {
+    .col-#{$number - $i} {
+        --column-size: #{$number - $i};
+    }
+}
+
+// $sizes: (small, 40), (normal, 60), (medium, 80);
+// // $index: 0;
+
+// @each $name, $size in $sizes {
+//     // $index: $index + 1;
+//     .col-#{$name} {
+//         width: #{$size}px;
+//     }
+// }
+
+$sizes: (
+    small: 60,
+    medium: 80,
+    large: 100
+);
+
+@each $name, $value in $sizes {
+    .col-#{$name} {
+        width: #{$value}px;
+    }
+}
