@@ -1,0 +1,118 @@
+@use "../abstracts/variables" as *;
+@use "../utilities" as *;
+
+@mixin gridSystem($prefix: "") {
+    @for $col from 1 through 12 {
+        .#{getResponsivePrefix($prefix)}grid-cols-#{$col} {
+            grid-template-columns: repeat($col, minmax(0, 1fr));
+        }
+
+        .#{getResponsivePrefix($prefix)}grid-rows-#{$col} {
+            grid-template-rows: repeat($col, minmax(0, 1fr));
+        }
+
+        .#{getResponsivePrefix($prefix)}col-span-#{$col} {
+            grid-column: span $col / span $col;
+        }
+
+        .#{getResponsivePrefix($prefix)}row-span-#{$col} {
+            grid-row: span $col / span $col;
+        }
+
+        .#{getResponsivePrefix($prefix)}col-start-#{$col} {
+            grid-column-start: $col;
+        }
+
+        .#{getResponsivePrefix($prefix)}col-end-#{$col} {
+            grid-column-end: $col;
+        }
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-rows-none {
+        grid-template-rows: none;
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-cols-none {
+        grid-template-columns: none;
+    }
+
+    .#{getResponsivePrefix($prefix)}col-auto {
+        grid-column: auto;
+    }
+
+    .#{getResponsivePrefix($prefix)}col-span-full {
+        grid-column: 1 / -1;
+    }
+
+    .#{getResponsivePrefix($prefix)}row-span-full {
+        grid-row: 1 / -1;
+    }
+
+    .#{getResponsivePrefix($prefix)}col-start-auto {
+        grid-column-start: auto;
+    }
+
+    .#{getResponsivePrefix($prefix)}col-end-auto {
+        grid-column-end: auto;
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-flow-row {
+        grid-auto-flow: row;
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-flow-col {
+        grid-auto-flow: column;
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-flow-dense {
+        grid-auto-flow: dense;
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-flow-row-dense {
+        grid-auto-flow: row dense;
+    }
+
+    .#{getResponsivePrefix($prefix)}grid-flow-col-dense {
+        grid-auto-flow: column dense;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-cols-auto {
+        grid-auto-columns: auto;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-cols-min {
+        grid-auto-columns: min-content;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-cols-max {
+        grid-auto-columns: max-content;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-cols-fr {
+        grid-auto-columns: minmax(0, 1fr);
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-rows-auto {
+        grid-auto-rows: auto;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-rows-min {
+        grid-auto-rows: min-content;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-rows-max {
+        grid-auto-rows: max-content;
+    }
+
+    .#{getResponsivePrefix($prefix)}auto-rows-fr {
+        grid-auto-rows: minmax(0, 1fr);
+    }
+}
+
+@include gridSystem("");
+
+@each $name, $value in $breakpoints {
+    @media (min-width: $value) {
+        @include gridSystem($name);
+    }
+}

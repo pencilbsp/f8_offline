@@ -1,0 +1,121 @@
+@use "fonts";
+@use "mixins";
+@use "variables" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Sofia Pro, sans-serif;
+}
+
+.wrapper-inner {
+    grid-template-columns: repeat(1, minmax(auto, 200px));
+    grid-template-rows: repeat(5, minmax(0, auto));
+    // grid-template-rows: repeat(5, 1fr);
+    // grid-template-areas:
+    //     "sidebar header header header header"
+    //     "sidebar main main main main"
+    //     "sidebar main main main main"
+    //     "sidebar main main main main"
+    //     "sidebar main main main main";
+    gap: 0px 1.25rem;
+    padding: 0 1.25rem;
+}
+
+.header {
+    // grid-area: header;
+    height: $header-height;
+    font-family: Circular Std, sans-serif;
+    font-size: 1.125rem;
+    background: $white;
+
+    .search {
+        column-gap: 1.125rem;
+
+        input {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    .nav {
+        column-gap: 2.75rem;
+
+        .nav-link {
+            position: relative;
+            padding: 0.5rem 0;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 0.125rem;
+                background: $black;
+                transition: width 250ms;
+            }
+
+            &.active,
+            &:hover {
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .actions {
+        margin-left: 3.125rem;
+        column-gap: 1.625rem;
+    }
+}
+
+.sidebar {
+    // grid-area: sidebar;
+    padding: 3.375rem 0;
+
+    .heading {
+        margin-top: 3.75rem;
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .nav {
+        margin-top: 3rem;
+        row-gap: 0.5rem;
+
+        .nav-link {
+            padding: 0.75rem 0.5rem;
+            transition: background 250ms ease-in-out;
+            border-radius: 0.5rem;
+
+            img {
+                width: 1.5rem;
+                margin-right: 0.75rem;
+            }
+
+            span {
+                font-size: 1rem;
+                line-height: 1rem;
+            }
+
+            &:hover {
+                background: $black-100;
+            }
+        }
+    }
+
+    .help {
+        img {
+            margin-right: 0.75rem;
+        }
+    }
+}
+
+.main {
+    // grid-area: main;
+}

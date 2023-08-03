@@ -1,0 +1,7 @@
+@function getResponsivePrefix($prefix) {
+    @if ($prefix != "") {
+        @return $prefix + "\\:";
+    } @else {
+        @return $prefix;
+    }
+}

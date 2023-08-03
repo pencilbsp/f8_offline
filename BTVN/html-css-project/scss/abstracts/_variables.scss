@@ -1,0 +1,38 @@
+// Font size
+$text6xl: 4.25rem; // 68px
+$text5xl: 3.25rem; // 52px
+$text4xl: 2rem; // 2rem
+$text3xl: 1.75rem; // 28px
+$text2xl: 1.5rem; // 24px
+$textXl: 1.25rem; // 20px
+$textLg: 1.125rem; // 18px
+$textBase: 1rem; // 16px
+$textSm: 0.875rem; // 14px
+$textXs: 0.75rem; // 12px
+
+// Font weight
+$fontNormal: 400;
+$fontMedium: 500;
+$fontSemibold: 600;
+$fontBold: 700;
+$fontExtrabold: 800;
+
+// Font family
+$fontFamily: Inter;
+
+// Breakpoint
+$_sm: 640px;
+$_md: 768px;
+$_lg: 992px;
+$_xl: 1200px;
+$_2xl: 1400px;
+$_3xl: 1600px;
+
+$breakpoints: (
+    sm: $_sm,
+    md: $_md,
+    lg: $_lg,
+    xl: $_xl,
+    "2xl": $_2xl,
+    "3xl": $_3xl,
+);

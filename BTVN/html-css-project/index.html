@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HTML CSS Project</title>
+        <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="__header sticky top-0 z-10">
+            <div class="container px-4">
+                <div class="flex justify-between">
+                    <a class="__brand" href="/">
+                        <img src="img/Logo_Greenchop_White.png" alt="Brand Logo" />
+                    </a>
+
+                    <div class="__header-wrap flex items-center justify-end">
+                        <input id="show-menu" type="checkbox" hidden />
+
+                        <ul class="__menu flex flex-col md:flex-row fixed md:static">
+                            <li><a class="inline-flex md:flex items-center active" href="#">Trang chủ</a></li>
+                            <li><a class="inline-flex md:flex items-center" href="#">Về Greenchop</a></li>
+                            <li><a class="inline-flex md:flex items-center" href="#">Sản phẩm</a></li>
+                            <li><a class="inline-flex md:flex items-center" href="#">Tin tức</a></li>
+                            <li><a class="inline-flex md:flex items-center" href="#">Liên hệ</a></li>
+                        </ul>
+
+                        <a class="__cart" href="#">
+                            <!-- <img class="icon" src="img/icons/Cart_Icon.png" alt="Cart Icon" /> -->
+                            <i class="fa-regular fa-cart-shopping icon"></i>
+                            <span>3</span>
+                        </a>
+                        <a class="__search" href="#">
+                            <!-- <img class="icon" src="img/icons/Search_Icon.png" alt="Search Icon" /> -->
+                            <i class="fa-regular fa-magnifying-glass icon"></i>
+                        </a>
+
+                        <label for="show-menu" class="block md:hidden __bars">
+                            <i class="fa-regular fa-bars icon"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="__hero overflow-hidden">
+            <div class="__hero-wrap md:container grid xl:grid-cols-2">
+                <div class="container xl:px-0">
+                    <div class="__chop flex relative">
+                        <img src="img/Chop.png" alt="Green Chop" />
+                        <span class="uppercase">Green<br />Chop</span>
+                    </div>
+                </div>
+                <div class="container px-4 order-none xl:order-first">
+                    <div class="__info flex flex-col justify-center h-full">
+                        <h2 class="text-[1.25rem] md:text-[1.75rem] lg:text-[2.25rem]">GreenChop: Tiện gấp dễ gắp</h2>
+                        <h1 class="text-[1.75rem] md:text-[2.5rem] lg:text-[2.75rem]">AN TOÀN HƠN<br />GIỮA MÙA COVID</h1>
+                        <p>
+                            GreenChop là sản phẩm đũa thay đầu duy nhất trên thị trường hiện tại. Sản phẩm cho phép người dùng tháo lắp và thay mới đầu đũa 100%
+                            trong mỗi bữa ăn. Nhờ đó, GreenChop giúp ngăn ngừa khả năng lây lan dịch bệnh và đảm bảo an toàn cho người dùng.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="__counter">
+            <div class="container px-4 flex flex-col items-center">
+                <h2 class="__section-title">GreenChop: Giữ an toàn trong từng bữa ăn của người Việt</h2>
+                <p class="__section-info text-center">
+                    Với sự tinh tế trong việc thấu hiểu hành vi của khách hàng cùng ý tưởng đột phá, GreenChop đã trở thành sản phẩm không thể thiếu trong mọi
+                    bữa ăn mùa dịch tại các nhà hàng, khách sạn, quán ăn...
+                </p>
+
+                <div class="__counter-wrap relative flex flex-col md:flex-row items-center mt-8">
+                    <div class="__item relative flex flex-col">
+                        <div class="__content">
+                            <img class="bg-[#FFF0E7]" src="img/icons/Quality.svg" alt="" />
+                            <span class="inline-block">1000+</span>
+                            <p>Hộ gia đình tin dùng GreenChop</p>
+                        </div>
+                    </div>
+                    <div class="__item relative flex flex-col">
+                        <div class="__content">
+                            <img class="bg-[#F2FFEC]" src="img/icons/Quality.svg" alt="" />
+                            <span class="inline-block">600+</span>
+                            <p>Nhà hàng đã phục vụ GreenChop cho thực khách</p>
+                        </div>
+                    </div>
+                    <div class="__item relative flex flex-col">
+                        <div class="__content">
+                            <img class="bg-[#FFF0E7]" src="img/icons/Quality.svg" alt="" />
+                            <span class="inline-block">20+</span>
+                            <p>Tỉnh thành được GreenChop phủ sóng</p>
+                        </div>
+                    </div>
+                    <div class="__background absolute inset-0">
+                        <span class="__circle rounded-full hidden lg:inline-block absolute bg-[#DCFFCA]"></span>
+                        <span class="__circle rounded-full hidden lg:inline-block absolute bg-[#FFD5BD]"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="__product">
+            <div class="container px-4">
+                <h2 class="__section-title">Sản phẩm</h2>
+
+                <div class="__product-list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
+                    <div style="--bg-color: #ffba94" class="__product-item relative flex flex-col items-center">
+                        <a href="#">
+                            <img class="relative" src="img/products/fe001963415772cd7b3173f2eaabc952.png" alt="" />
+                            <p class="__product-name">Combo Quán ăn</p>
+                        </a>
+                        <span class="__line inline-block"></span>
+                        <p>1 Thùng 1000 đôi</p>
+                        <p class="__product-price">Giá: <strong>600.000</strong> vnd</p>
+                        <button class="__add-cart-btn">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div style="--bg-color: #c5ffa8" class="__product-item relative flex flex-col items-center">
+                        <a href="#">
+                            <img class="relative" src="img/products/ab677580aeb421d8f349f378808f0d1e.png" alt="" />
+                            <p class="__product-name">Combo Quán ăn - nhà hàng</p>
+                        </a>
+                        <span class="__line inline-block"></span>
+                        <p>1 Thùng 2000 đôi</p>
+                        <p class="__product-price">Giá: <strong>1.200.000</strong> vnd</p>
+                        <button class="__add-cart-btn">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div style="--bg-color: #ffba94" class="__product-item relative flex flex-col items-center">
+                        <a href="#">
+                            <img class="relative" src="img/products/a161ee94b7dc72c0c0fae00f49e49851.png" alt="" />
+                            <p class="__product-name">Combo Quán ăn Nhà hàng - Khách sạn</p>
+                        </a>
+                        <span class="__line inline-block"></span>
+                        <p>1 Thùng 3000 đôi</p>
+                        <p class="__product-price">Giá: <strong>1.800.000</strong> vnd</p>
+                        <button class="__add-cart-btn">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div style="--bg-color: #ffba94" class="__product-item relative flex flex-col items-center">
+                        <a href="#">
+                            <img class="relative" src="img/products/fe001963415772cd7b3173f2eaabc952.png" alt="" />
+                            <p class="__product-name">Combo Quán ăn</p>
+                        </a>
+                        <span class="__line inline-block"></span>
+                        <p>1 Thùng 1000 đôi</p>
+                        <p class="__product-price">Giá: <strong>600.000</strong> vnd</p>
+                        <button class="__add-cart-btn">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div style="--bg-color: #c5ffa8" class="__product-item relative flex flex-col items-center">
+                        <a href="#">
+                            <img class="relative" src="img/products/ab677580aeb421d8f349f378808f0d1e.png" alt="" />
+                            <p class="__product-name">Combo Quán ăn - nhà hàng</p>
+                        </a>
+                        <span class="__line inline-block"></span>
+                        <p>1 Thùng 2000 đôi</p>
+                        <p class="__product-price">Giá: <strong>1.200.000</strong> vnd</p>
+                        <button class="__add-cart-btn">Thêm vào giỏ hàng</button>
+                    </div>
+                    <div style="--bg-color: #ffba94" class="__product-item relative flex flex-col items-center">
+                        <a href="#">
+                            <img class="relative" src="img/products/a161ee94b7dc72c0c0fae00f49e49851.png" alt="" />
+                            <p class="__product-name">Combo Quán ăn Nhà hàng - Khách sạn</p>
+                        </a>
+                        <span class="__line inline-block"></span>
+                        <p>1 Thùng 3000 đôi</p>
+                        <p class="__product-price">Giá: <strong>1.800.000</strong> vnd</p>
+                        <button class="__add-cart-btn">Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="__news">
+            <div class="container px-4 flex flex-col items-center">
+                <h2 class="__section-title">Tin tức</h2>
+                <p class="__section-info text-center mx-auto">
+                    L nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
+                    nulla facilisi. Lorem ipsum dolor sit amet, cons ectetuer adipiscing
+                </p>
+
+                <div class="__news-latest grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-12">
+                    <div class="__news_item">
+                        <a href="">
+                            <img src="img/news/6102abf2d25dcbc4c4f3b6d6aac69ada.png" alt="" />
+                        </a>
+
+                        <div class="__info flex justify-between items-center">
+                            <a href="">Lorem ipsum</a>
+                            <div class="__created_date flex">
+                                <img src="img/icons/Calendar.svg" alt="" />
+                                <span>28 - 10- 2021</span>
+                            </div>
+                        </div>
+
+                        <a href="">
+                            <h3>Lorem ipsum dolor sit amet, cons in ectetuer adipiscing elit</h3>
+                        </a>
+
+                        <p>
+                            Dolor sit amet, cons ectetuer adipiscing elit, sed diam in on nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                            volutpat. Ut wisi enim...
+                        </p>
+                    </div>
+                    <div class="__news_item">
+                        <a href="">
+                            <img src="img/news/bc2687c7907b568816f645e6bf5cfa70.png" alt="" />
+                        </a>
+
+                        <div class="__info flex justify-between items-center">
+                            <a href="">Lorem ipsum</a>
+                            <div class="__created_date flex">
+                                <img src="img/icons/Calendar.svg" alt="" />
+                                <span>28 - 10- 2021</span>
+                            </div>
+                        </div>
+
+                        <a href="#">
+                            <h3>Lorem ipsum dolor sit amet, cons in ectetuer adipiscing elit</h3>
+                        </a>
+
+                        <p>
+                            Dolor sit amet, cons ectetuer adipiscing elit, sed diam in on nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                            volutpat. Ut wisi enim...
+                        </p>
+                    </div>
+                    <div class="__news_item">
+                        <a href="">
+                            <img src="img/news/ff87ec652042c2c1909b47a774bddde7.png" alt="" />
+                        </a>
+
+                        <div class="__info flex justify-between items-center">
+                            <a href="">Lorem ipsum</a>
+                            <div class="__created_date flex">
+                                <img src="img/icons/Calendar.svg" alt="" />
+                                <span>28 - 10- 2021</span>
+                            </div>
+                        </div>
+
+                        <a href="">
+                            <h3>Lorem ipsum dolor sit amet, cons in ectetuer adipiscing elit</h3>
+                        </a>
+
+                        <p>
+                            Dolor sit amet, cons ectetuer adipiscing elit, sed diam in on nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                            volutpat. Ut wisi enim...
+                        </p>
+                    </div>
+                </div>
+
+                <a class="__load-more flex items-center" href="#">
+                    <span>Xem thêm</span>
+                    <img src="img/icons/chevron_duo_right.svg" alt="" />
+                </a>
+            </div>
+        </section>
+    </body>
+</html>

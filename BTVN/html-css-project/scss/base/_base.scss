@@ -1,0 +1,326 @@
+@use "../abstracts" as *;
+@use "../utilities" as *;
+
+body {
+    color: $black;
+    font-weight: $fontNormal;
+}
+
+.__section-title {
+    text-align: center;
+    font-size: $text4xl;
+    font-weight: $fontExtrabold;
+}
+
+.__section-info {
+    margin-top: 1.5rem;
+
+    @include responsive(lg, up) {
+        max-width: 55%;
+    }
+}
+
+// .container {
+//     margin: 0 auto;
+//     padding: 0 1.5rem;
+//     max-width: map-get($breakpoints, xl);
+// }
+
+// .icon {
+//     height: 1.5625rem;
+//     font-size: 1.5625rem;
+// }
+
+// @mixin flexSystem($prefix: "") {
+//     .#{getResponsivePrefix($prefix)}block {
+//         display: block;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}inline-block {
+//         display: inline-block;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}inline {
+//         display: inline;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex {
+//         display: flex;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}inline-flex {
+//         display: inline-flex;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table {
+//         display: table;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}inline-table {
+//         display: inline-table;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-caption {
+//         display: table-caption;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-cell {
+//         display: table-cell;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-column {
+//         display: table-column;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-column-group {
+//         display: table-column-group;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-footer-group {
+//         display: table-footer-group;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-header-group {
+//         display: table-header-group;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-row-group {
+//         display: table-row-group;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}table-row {
+//         display: table-row;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flow-root {
+//         display: flow-root;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}grid {
+//         display: grid;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}inline-grid {
+//         display: inline-grid;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}contents {
+//         display: contents;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}list-item {
+//         display: list-item;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}hidden {
+//         display: none;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}static {
+//         position: static;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}fixed {
+//         position: fixed;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}absolute {
+//         position: absolute;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}relative {
+//         position: relative;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}sticky {
+//         position: sticky;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}inset {
+//         inset: 0;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-row {
+//         flex-direction: row;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-row-reverse {
+//         flex-direction: row-reverse;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-col {
+//         flex-direction: column;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-col-reverse {
+//         flex-direction: column-reverse;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-wrap {
+//         flex-wrap: wrap;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-wrap-reverse {
+//         flex-wrap: wrap-reverse;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}flex-nowrap {
+//         flex-wrap: nowrap;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-normal {
+//         justify-content: normal;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-start {
+//         justify-content: flex-start;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-end {
+//         justify-content: flex-end;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-center {
+//         justify-content: center;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-between {
+//         justify-content: space-between;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-around {
+//         justify-content: space-around;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-evenly {
+//         justify-content: space-evenly;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-stretch {
+//         justify-content: stretch;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-items-start {
+//         justify-items: start;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-items-end {
+//         justify-items: end;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-items-center {
+//         justify-items: center;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-items-stretch {
+//         justify-items: stretch;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-self-auto {
+//         justify-self: auto;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-self-start {
+//         justify-self: start;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-self-end {
+//         justify-self: end;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-self-center {
+//         justify-self: center;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}justify-self-stretch {
+//         justify-self: stretch;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-normal {
+//         align-content: normal;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-center {
+//         align-content: center;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-start {
+//         align-content: flex-start;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-end {
+//         align-content: flex-end;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-between {
+//         align-content: space-between;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-around {
+//         align-content: space-around;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-evenly {
+//         align-content: space-evenly;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-baseline {
+//         align-content: baseline;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}content-stretch {
+//         align-content: stretch;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}items-start {
+//         align-items: flex-start;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}items-end {
+//         align-items: flex-end;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}items-center {
+//         align-items: center;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}items-baseline {
+//         align-items: baseline;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}items-stretch {
+//         align-items: stretch;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}self-auto {
+//         align-self: auto;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}self-start {
+//         align-self: flex-start;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}self-end {
+//         align-self: flex-end;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}self-center {
+//         align-self: center;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}self-stretch {
+//         align-self: stretch;
+//     }
+
+//     .#{getResponsivePrefix($prefix)}self-baseline {
+//         align-self: baseline;
+//     }
+// }
+
+// @include flexSystem;
+
+// @each $name, $value in $breakpoints {
+//     @media (min-width: $value) {
+//         @include flexSystem($name);
+//     }
+// }

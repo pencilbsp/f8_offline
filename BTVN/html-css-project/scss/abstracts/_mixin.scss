@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+
+@mixin responsive($size, $up: up) {
+    @if ($up == up) {
+        @media (min-width: map-get($breakpoints, $size)) {
+            @content;
+        }
+    }
+
+    @if ($up == down) {
+        @media (max-width: map-get($breakpoints, $size)) {
+            @content;
+        }
+    }
+}

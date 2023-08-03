@@ -1,0 +1,114 @@
+@font-face {
+  font-family: Circular Std;
+  src: url("../fonts/circular-std-6.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Circular Std;
+  src: url("../fonts/circular-std-4.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Circular Std;
+  src: url("../fonts/circular-std-2.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/SofiaProRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Sofia Pro";
+  src: url("../fonts/SofiaProBlack.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  font-family: Sofia Pro, sans-serif;
+}
+
+.wrapper-inner {
+  grid-template-columns: repeat(1, minmax(auto, 200px));
+  grid-template-rows: repeat(5, minmax(0, auto));
+  gap: 0px 1.25rem;
+  padding: 0 1.25rem;
+}
+
+.header {
+  height: 120px;
+  font-family: Circular Std, sans-serif;
+  font-size: 1.125rem;
+  background: hsl(0, 0%, 100%);
+}
+.header .search {
+  column-gap: 1.125rem;
+}
+.header .search input:focus {
+  outline: none;
+}
+.header .nav {
+  column-gap: 2.75rem;
+}
+.header .nav .nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+}
+.header .nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0.125rem;
+  background: hsl(0, 0%, 0%);
+  transition: width 250ms;
+}
+.header .nav .nav-link.active::after, .header .nav .nav-link:hover::after {
+  width: 100%;
+}
+.header .actions {
+  margin-left: 3.125rem;
+  column-gap: 1.625rem;
+}
+
+.sidebar {
+  padding: 3.375rem 0;
+}
+.sidebar .heading {
+  margin-top: 3.75rem;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.sidebar .nav {
+  margin-top: 3rem;
+  row-gap: 0.5rem;
+}
+.sidebar .nav .nav-link {
+  padding: 0.75rem 0.5rem;
+  transition: background 250ms ease-in-out;
+  border-radius: 0.5rem;
+}
+.sidebar .nav .nav-link img {
+  width: 1.5rem;
+  margin-right: 0.75rem;
+}
+.sidebar .nav .nav-link span {
+  font-size: 1rem;
+  line-height: 1rem;
+}
+.sidebar .nav .nav-link:hover {
+  background: hsla(0, 0%, 0%, 0.1);
+}
+.sidebar .help img {
+  margin-right: 0.75rem;
+}
+
+/*# sourceMappingURL=input.css.map */
