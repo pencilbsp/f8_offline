@@ -1175,9 +1175,9 @@ video {
 .__product .__product-list .__product-item .__add-cart-btn {
   cursor: pointer;
   color: #fff;
-  padding: 0.875rem 0.75rem;
+  padding: 0.65rem 0.75rem;
   background-color: #46b20f;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   border-radius: 0.5rem;
   margin-top: 1.875rem;
