@@ -443,4 +443,65 @@ body {
   font-weight: 700;
 }
 
+.__advantage {
+  margin-top: 6.25rem;
+}
+.__advantage ul {
+  gap: 1.5625rem;
+}
+@media (min-width: 1200px) {
+  .__advantage ul {
+    padding: 0 56px;
+  }
+}
+.__advantage ul li {
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+.__advantage ul li .__info {
+  padding: 1rem 1.75rem;
+}
+.__advantage ul li .__info h5 {
+  color: #e05000;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.__advantage ul li img {
+  aspect-ratio: 345/195;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.__advantage .__background {
+  margin-top: -18rem;
+  height: 22.5rem;
+  background-color: #fff0e7;
+}
+
+.__quanlity {
+  margin-top: 6.25rem;
+}
+.__quanlity ul {
+  gap: 2.5rem 3.5rem;
+}
+@media (min-width: 1200px) {
+  .__quanlity ul {
+    padding: 0 3.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .__quanlity ul {
+    padding: 0 6rem;
+  }
+}
+.__quanlity ul li img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.__quanlity ul li .__info {
+  margin-left: 1rem;
+}
+.__quanlity ul li .__info strong {
+  font-size: 1.25rem;
+}
+
 /*# sourceMappingURL=input.css.map */

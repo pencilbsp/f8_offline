@@ -100,7 +100,15 @@ Các trường hợp còn lại chuyển về true -> truthy
 7. Toán từ &&
 */
 
-var a = "Pencil";
-var b = a && "F8";
+// var a = "Pencil";
+// var b = a && "F8";
 
+// console.log(b);
+
+/*
+8. Toán từ ||
+*/
+
+var a = 0;
+var b = a || "F8"; // Phân biệt với nullish
 console.log(b);
