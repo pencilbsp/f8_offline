@@ -8,8 +8,6 @@ function calculateTaxiFee(distance) {
     return distance <= 120 ? totalFee : totalFee - (totalFee / 100) * 10;
 }
 
-// console.log(calculateTaxiFee(121));
-
 // BT2
 function calculateElectricityFee(amount, totalFee = 0, rate = 1) {
     // Dùng string thay cho array
@@ -38,12 +36,45 @@ function calculateElectricityFee(amount, totalFee = 0, rate = 1) {
     rate++;
 
     if (rate <= 6) return calculateElectricityFee(amount, totalFee, rate);
-    // if (amount > 0) return calculateElectricityFee(amount, totalFee, rate);
-    // return totalFee;
-    // console.log(amount > 0 && range <= 6);
-    console.log(totalFee);
+    return totalFee;
 }
 
-calculateElectricityFee(401);
+// BT3
+function sum(n) {
+    let i = 1;
+    let tmp = 0;
+    while (i <= n) {
+        tmp = tmp + i * (i + 1);
+        i++;
+    }
 
-// console.log(Array.from({ length: 100 - 51 + 1 }, (_, i) => 51 + i).length);
+    return tmp;
+}
+
+// BT4
+function idPrimeNumber(num) {
+    // Corner case
+    if (num <= 1) return false;
+
+    // Check from 2 to n-1
+    for (let i = 2; i < num; i++) if (num % i == 0) return false;
+
+    return true;
+}
+
+// BT5
+function paintTriangleNumber(n, start = 1) {
+    let i = 1;
+    // while () {
+
+    // }
+}
+
+// BT8
+function bt8(n, tmp = 1, i = 2) {
+    if (i > n) return tmp;
+
+    tmp = tmp + 1 / i;
+    i++;
+    return bt8(n, tmp, i);
+}
