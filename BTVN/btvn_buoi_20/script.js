@@ -93,7 +93,7 @@ function render(data) {
     var contentWrapElm = document.createElement("div");
     contentWrapElm.append(titleElm, contentElm);
 
-    wrapElm = document.createElement("div");
+    var wrapElm = document.createElement("div");
     wrapElm.classList.add("post");
     if (item.coverRight) wrapElm.classList.add("reverse");
 
