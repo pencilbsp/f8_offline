@@ -39,8 +39,6 @@ function Customer(name, age, address) {
     if (names.length < 3) return this.name;
     return [names[0], names[names.length - 1]].join(" ");
   };
-
-  return this;
 }
 
 function createCustomers(customers) {
@@ -64,8 +62,6 @@ function User(name, password, email) {
   this.password = password;
   this.email = email;
   this.rule = "user";
-
-  return this;
 }
 
 /**
@@ -88,6 +84,12 @@ function register(name, password, email) {
 
   if (!email) {
     throw new Error("Vui lòng nhập địa chỉ email");
+  }
+
+  var exitsUser = data.find((u) => u.email === email);
+
+  if (exitsUser) {
+    throw new Error("Email đã được đăng ký");
   }
 
   var newUser = new User(name, password, email);
@@ -124,7 +126,7 @@ function login(email, password) {
 register("Nguyen Van A", "123456", "nguyenvana@email.com");
 var dataRegister = register("Nguyen Van B", "1234567", "nguyenvanb@email.com");
 
-const dataLogin = login("nguyenvana@email.com", "1234567");
+const dataLogin = login("nguyenvana@email.com", "123456");
 
 console.log("dataRegister:", dataRegister);
 console.log("dataLogin:", dataLogin);
