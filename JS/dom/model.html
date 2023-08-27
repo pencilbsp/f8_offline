@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Roboto", sans-serif;
+        }
+
+        .overlay {
+            opacity: 1;
+            position: absolute;
+            inset: 0;
+            background-color: rgba(1, 1, 1, 0.5);
+            transition: opacity 150ms ease-in;
+        }
+
+        .model-wrap {
+            z-index: 1;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model {
+            top: 0;
+            position: relative;
+            padding: 16px;
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            transform: translateY(0);
+            transition: transform 150ms ease-out;
+        }
+
+        .model-title {
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .model-title p {
+            font-weight: bold;
+            font-size: 120%;
+        }
+
+        .overlay.hidden, .model-wrap.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .model-wrap.hidden .model {
+            transform: translateY(-100%);
+        }
+
+    </style>
+</head>
+<body>
+<div id="model-overlay" class="overlay"></div>
+<div id="model" class="model-wrap">
+    <div class="model">
+        <div class="model-title">
+            <p>Model Title</p>
+            <button id="model-close">X</button>
+        </div>
+        <div class="model-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, commodi consectetur dolores dolorum
+                facilis iusto, natus odit perferendis, quasi quidem saepe sed. Aspernatur distinctio facere iusto nobis
+                omnis! Harum, unde.</p>
+        </div>
+    </div>
+</div>
+<button id="model-btn" class="btn">Open Model</button>
+<script src="model.js"></script>
+</body>
+</html>

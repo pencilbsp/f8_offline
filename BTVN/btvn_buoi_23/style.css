@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Open Sans", sans-serif;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+.form-model {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  color: #4d4d4d;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.form-model.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+.model-container {
+  background-color: white;
+  width: 100%;
+  max-width: 460px;
+  position: relative;
+  border-radius: 6px;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+
+.model-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6) none;
+  z-index: -1;
+}
+
+.model-nav {
+  display: flex;
+}
+
+.model-nav button {
+  flex: 1;
+  border: none;
+  outline: none;
+  background-color: #eee;
+  color: #999;
+  padding: 20px 0;
+  font-size: 18px;
+  line-height: 24px;
+  cursor: pointer;
+}
+
+.model-nav button.active {
+  background: #fff none;
+  color: #333;
+}
+
+.model-content {
+  padding: 24px;
+}
+
+.model-desc {
+  text-align: center;
+}
+
+.model-desc.line {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 24px;
+}
+
+.model-desc.line:after,
+.model-desc.line:before {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: #eee;
+}
+
+.model-tab {
+  display: none;
+}
+
+.model-tab.active {
+  display: initial;
+}
+
+.auth-social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.auth-social button {
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: #e2e8f0;
+  flex: 1;
+  justify-content: center;
+  padding: 4px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.auth-social button::before {
+  content: "";
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 35px;
+}
+
+.auth-social button.google::before {
+  background-image: url(https://cdnweb.dantri.com.vn/dist/7d0beed56ca1d379fbc0.svg);
+}
+
+.auth-social button.facebook::before {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  background-image: url(https://cdnweb.dantri.com.vn/dist/f5ae7e06d5a6fc5ebaff.svg);
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-field label {
+  color: #1a1a1a;
+  font-weight: 500;
+  margin: 0 0 6px;
+  display: block;
+}
+
+.input-field input {
+  width: 100%;
+  height: 44px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px 16px 10px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #333;
+  outline: 0;
+}
+
+.input-field.password {
+  position: relative;
+}
+
+.input-field.password input {
+  padding-right: 44px;
+}
+
+.show-password {
+  position: relative;
+}
+
+.input-validate {
+  display: none;
+  color: #ef4444;
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.input-field.has-error .input-validate {
+  display: initial;
+}
+
+.input-field.has-error input {
+  border: 1px solid #ef4444;
+}
+
+.auth-view {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  padding: 0;
+  font-size: 24px;
+  color: gray;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.auth-forgot {
+  color: gray;
+  text-align: right;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.auth-term {
+  color: #666;
+}
+
+.auth-term a {
+  color: #2361ff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #f8fafc;
+  border: 0;
+  padding: 0;
+  border-radius: 5px;
+  background: #1a7900 none;
+  cursor: pointer;
+}
