@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  display: flex;
+  background: #8758ff;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.todo-box {
+  padding: 2rem;
+  margin-top: 5rem;
+  border-radius: 0.3125rem;
+  background-color: #1a1a40;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 2rem;
+
+  input {
+    color: white;
+    font-size: 1rem;
+    background: none;
+    min-width: 18.75rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #8758ff;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    color: white;
+    font-size: 1rem;
+    padding: 0 0.55rem;
+    background-color: #8758ff;
+  }
+}
+
+.todo-list {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  > .item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #8758ff;
+    padding: 0.75rem 1rem;
+    border-radius: 0.3125rem;
+    justify-content: space-between;
+
+    &.editing {
+      input {
+        cursor: text;
+      }
+
+      .actions {
+        button {
+          display: none;
+        }
+        .update-btn {
+          display: initial;
+        }
+      }
+    }
+
+    > input {
+      width: 100%;
+      border: none;
+      color: white;
+      background: none;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-right: 1rem;
+
+      &.complete {
+        text-decoration: line-through;
+        color: #c5aeff;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    > .actions {
+      display: flex;
+      gap: 0.75rem;
+
+      button {
+        i {
+          color: white;
+          font-size: 1rem;
+        }
+
+        &.update-btn {
+          display: none;
+        }
+      }
+    }
+  }
+}

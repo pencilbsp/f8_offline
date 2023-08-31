@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  display: flex;
+  background: #8758ff;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.todo-box {
+  padding: 2rem;
+  margin-top: 5rem;
+  border-radius: 0.3125rem;
+  background-color: #1a1a40;
+}
+.todo-box h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.todo-form {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.todo-form input {
+  color: white;
+  font-size: 1rem;
+  background: none;
+  min-width: 18.75rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #8758ff;
+}
+.todo-form input:focus {
+  outline: none;
+}
+.todo-form button {
+  color: white;
+  font-size: 1rem;
+  padding: 0 0.55rem;
+  background-color: #8758ff;
+}
+
+.todo-list {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.todo-list > .item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #8758ff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.3125rem;
+  justify-content: space-between;
+}
+.todo-list > .item.editing input {
+  cursor: text;
+}
+.todo-list > .item.editing .actions button {
+  display: none;
+}
+.todo-list > .item.editing .actions .update-btn {
+  display: initial;
+}
+.todo-list > .item > input {
+  width: 100%;
+  border: none;
+  color: white;
+  background: none;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.todo-list > .item > input.complete {
+  text-decoration: line-through;
+  color: #c5aeff;
+}
+.todo-list > .item > input:focus {
+  outline: none;
+}
+.todo-list > .item > .actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.todo-list > .item > .actions button i {
+  color: white;
+  font-size: 1rem;
+}
+.todo-list > .item > .actions button.update-btn {
+  display: none;
+}/*# sourceMappingURL=style.css.map */
