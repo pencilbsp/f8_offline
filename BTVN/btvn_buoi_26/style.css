@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 960px;
+}
+
+.player {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.player-inner {
+  gap: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-inner > span {
+  user-select: none;
+}
+
+.play-btn {
+  color: gray;
+}
+
+i.fa-regular {
+  display: none;
+}
+
+.player.paused .fa-play {
+  display: initial;
+}
+
+.player.playing .fa-pause {
+  display: initial;
+}
+
+.play-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.progress-bar {
+  height: 10px;
+  width: 80%;
+  position: relative;
+  cursor: pointer;
+  background-color: gray;
+  border-radius: 5px;
+}
+
+.progress {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+.progress > span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  right: 0;
+  top: 50%;
+  background-color: blueviolet;
+  translate: 50% -50%;
+}
