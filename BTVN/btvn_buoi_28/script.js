@@ -1,5 +1,5 @@
-var songName = "Thu Cuối";
-var singerName = "Yanbi, Mr.T, Hằng BingBoong";
+var songName = "Tòng Phu";
+var singerName = "Keyo";
 
 var requestAnimationFrame =
   window.requestAnimationFrame ||
@@ -147,22 +147,29 @@ function getWordPercent(word, currentTime) {
  * @param {number} currentTime
  * @param {Sentence} sentence
  * @param {HTMLElement} elm
+ * @param {number} offetRange
  */
-function getSentenceWords(id, sentence, currentTime, elm) {
+function getSentenceWords(id, sentence, currentTime, elm, offetRange) {
   if (elm.children.length > 0 && elm.dataset.id == id) {
+    console.log({ offetRange });
     var index = 0;
+    elm.style.transitionDelay = `${offetRange / 2}ms`;
+    elm.style.transition = `opacity ${offetRange / 2}ms ease-out`;
+
     for (var word of elm.children) {
       var percent = getWordPercent(sentence.words[index], currentTime);
       word.children[1].style.width = (percent * 100).toFixed(2) + "%";
       if (index === sentence.words.length - 1 && percent === 1) {
-        elm.classList.add("faded");
+        elm.style.opacity = 0;
       }
 
       index++;
     }
   } else {
     elm.innerHTML = "";
-    elm.classList.remove("faded");
+    elm.style.opacity = 1;
+    // elm.style.transition = "";
+    elm.style.transitionDelay = 0;
 
     elm.append(
       ...sentence.words.map(function (word) {
@@ -183,10 +190,12 @@ function getSentenceWords(id, sentence, currentTime, elm) {
 }
 
 function karaokeRender() {
+  var offetRange = 0;
   var currentTime = audio.currentTime * 1000;
 
   var index = karaoke.lyrics.findIndex(function (sentence) {
-    return currentTime >= sentence.timeRange[0] - 5000 && currentTime <= sentence.timeRange[1] + 1000;
+    offetRange = (sentence.timeRange[1] - sentence.timeRange[0]) * 0.2;
+    return currentTime >= sentence.timeRange[0] - 5000 && currentTime <= sentence.timeRange[1] + offetRange;
   });
 
   if (index > -1) {
@@ -203,11 +212,11 @@ function karaokeRender() {
     var next = karaoke.lyrics[karaoke.lines[1]];
 
     if (current) {
-      getSentenceWords(index, current, audio.currentTime * 1000, karaoke.firstLine);
+      getSentenceWords(index, current, audio.currentTime * 1000, karaoke.firstLine, offetRange);
     }
 
     if (next) {
-      getSentenceWords(index + 1, next, audio.currentTime * 1000, karaoke.secondLine);
+      getSentenceWords(index + 1, next, audio.currentTime * 1000, karaoke.secondLine, offetRange);
     }
   } else {
     karaoke.firstLine.innerHTML = songName;
