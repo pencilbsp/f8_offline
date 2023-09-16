@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 2000px;
+      }
+
+      .heading {
+        padding: 15px 0;
+      }
+
+      .header .header-inner {
+        padding: 10px;
+        text-align: center;
+      }
+
+      .header .menu {
+        background-color: green;
+        height: 35px;
+      }
+
+      .header .menu.fixed {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <h1>HEADER</h1>
+      </div>
+      <nav class="menu"></nav>
+    </header>
+    <main>
+      <h2>Trang chủ</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique repudiandae perferendis numquam architecto
+        vel saepe exercitationem veritatis. Quas molestiae cum, temporibus ex autem expedita nostrum aut, mollitia modi
+        animi voluptatibus?
+      </p>
+    </main>
+    <script src="ex12.js"></script>
+  </body>
+</html>

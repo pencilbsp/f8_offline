@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../../assets/fapro/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="lyric.js"></script>
+  </head>
+  <body>
+    <audio src="../../assets/SMLNL.mp3"></audio>
+    <div id="karaoke-model">
+      <div class="model-head">
+        <h2>Karaoke</h2>
+        <!-- <button class="karaoke-btn">Ẩn</button> -->
+      </div>
+      <div class="model-content">
+        <div class="count-down">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div id="karaoke"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="player-wrap">
+        <div class="player">
+          <button class="play-btn">
+            <i class="fa-light fa-circle-play"></i>
+            <i class="fa-light fa-circle-pause"></i>
+          </button>
+
+          <div class="player-inner">
+            <span>00:00</span>
+            <div class="progress-bar">
+              <div class="progress">
+                <span></span>
+              </div>
+            </div>
+            <span>00:00</span>
+          </div>
+          <button class="karaoke-btn">
+            <i class="fa-light fa-microphone-stand"></i>
+            Hát Karaoke
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
