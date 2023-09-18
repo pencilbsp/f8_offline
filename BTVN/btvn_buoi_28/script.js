@@ -1,6 +1,10 @@
 var songName = "Tòng Phu";
 var singerName = "Keyo";
 
+/**
+ * Khởi tạo yêu cầu dùng GPU để render các câu hát
+ * cho hiệu ứng được mượt mà hơn hay vì dùng event timeupdate
+ */
 var requestAnimationFrame =
   window.requestAnimationFrame ||
   window.mozRequestAnimationFrame ||
@@ -150,9 +154,20 @@ function getWordPercent(word, currentTime) {
  * @param {number} offetRange
  */
 function getSentenceWords(id, sentence, currentTime, elm, offetRange) {
+  // *(1) Kiểm tra xem câu hát hiện tại có đang được hiện thị hay không
   if (elm.children.length > 0 && elm.dataset.id == id) {
-    console.log({ offetRange });
+    /**
+     * Nếu được được hiện thị thì tiến hành
+     * tính toán lại phần trăm của từng từ trong câu
+     * so với thời gian hiện tại của bài hát
+     */
+    // console.log({ offetRange });
     var index = 0;
+    /**
+     * 50% giá trị của {{offetRange}} dùng để
+     * tạo delay cho hiệu ứng opacity
+     * và 50% còn là thời gian để ẩn đi
+     */
     elm.style.transitionDelay = `${offetRange / 2}ms`;
     elm.style.transition = `opacity ${offetRange / 2}ms ease-out`;
 
@@ -166,6 +181,13 @@ function getSentenceWords(id, sentence, currentTime, elm, offetRange) {
       index++;
     }
   } else {
+    /**
+     * Nếu câu hát hiện tại không phải là câu
+     * đang được hiện thị trong element thì tiến hành
+     * xóa nó đi và khởi tạo các thành phần cho câu hát mới
+     *
+     * Đặt lại opacity và transitionDelay cho câu hát mới này
+     */
     elm.innerHTML = "";
     elm.style.opacity = 1;
     // elm.style.transition = "";
@@ -185,6 +207,7 @@ function getSentenceWords(id, sentence, currentTime, elm, offetRange) {
       })
     );
 
+    // Đặt id cho element dùng để xác định câu hát hiện tại ở *(1)
     elm.dataset.id = id.toString();
   }
 }
@@ -194,14 +217,33 @@ function karaokeRender() {
   var currentTime = audio.currentTime * 1000;
 
   var index = karaoke.lyrics.findIndex(function (sentence) {
+    /**
+     * Giá trị {{offetRange}} là khoảng thời gian bằng 20%
+     * thời gian của câu hát sẽ được hiện thị
+     * dùng để tạo hiệu ứng cho câu hát được ẩn đi mượt hơn
+     */
     offetRange = (sentence.timeRange[1] - sentence.timeRange[0]) * 0.2;
     return currentTime >= sentence.timeRange[0] - 5000 && currentTime <= sentence.timeRange[1] + offetRange;
   });
 
   if (index > -1) {
-    var hasNext =
-      karaoke.lyrics[index + 1] && karaoke.lyrics[index + 1].timeRange[0] - karaoke.lyrics[index].timeRange[1] < 5000;
+    /**
+     * Tính toán xem trong 5 (5000ms) giây tiếp theo bài hát có câu nào đc hát hay không
+     */
+    var hasNext = false;
+    var nextSentence = karaoke.lyrics[index + 1];
 
+    if (nextSentence) {
+      hasNext = nextSentence.timeRange[0] - karaoke.lyrics[index].timeRange[1] < 5000;
+    }
+
+    /**
+     * Chuyển câu tiếp theo lên dòng đầu tiên nếu
+     * câu hiện tại đang hiển thị ở dòng thử 2
+     *
+     * Nếu không không có câu tiếp theo thì
+     * xóa câu trong dòng trước đó đi
+     */
     if (karaoke.lines[1] === index) {
       karaoke.lines = hasNext ? [index + 1, index] : [null, index];
     } else {
@@ -219,8 +261,15 @@ function karaokeRender() {
       getSentenceWords(index + 1, next, audio.currentTime * 1000, karaoke.secondLine, offetRange);
     }
   } else {
+    /**
+     * Nếu không có câu nào được hát thì
+     * hiện tên bài hát và tên ca sĩ
+     */
+    karaoke.firstLine.style.opacity = 1;
     karaoke.firstLine.innerHTML = songName;
     karaoke.firstLine.dataset.id = "";
+
+    karaoke.secondLine.style.opacity = 1;
     karaoke.secondLine.innerHTML = singerName;
     karaoke.secondLine.dataset.id = "";
   }
