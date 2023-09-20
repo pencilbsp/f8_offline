@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100vh;
+}
+
+.player {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* .player.show {
+  z-index: 10;
+  position: relative;
+  justify-content: end;
+} */
+
+.player-inner {
+  gap: 16px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-inner > span {
+  user-select: none;
+}
+
+.play-btn {
+  color: gray;
+}
+
+i.fa-regular {
+  display: none;
+}
+
+.player.paused .fa-play {
+  display: initial;
+}
+
+.player.playing .fa-pause {
+  display: initial;
+}
+
+.play-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-bottom: 16px;
+  font-size: 24px;
+}
+
+.progress-bar {
+  height: 10px;
+  width: 80%;
+  position: relative;
+  cursor: pointer;
+  background-color: gray;
+  border-radius: 5px;
+}
+
+.progress {
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  border-radius: 5px;
+}
+
+.progress > span {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  right: 0;
+  top: 50%;
+  background-color: blueviolet;
+  translate: 50% -50%;
+}
+
+.karaoke {
+  text-align: center;
+}
+
+.karaoke .karaoke-play {
+  border: none;
+  background: blueviolet;
+  color: #fff;
+  padding: 8px 16px;
+}
+
+.karaoke .karaoke-inner {
+  position: fixed;
+  inset: 0;
+  background: blueviolet;
+  color: #fff;
+  padding: 15px;
+  transition: top 400ms ease;
+  top: 100%;
+}
+
+.karaoke .karaoke-inner.show {
+  top: 0;
+}
+
+.karaoke .karaoke-heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.karaoke-heading h2 {
+  display: inline-block;
+}
+
+.karaoke-heading .karaoke-close {
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.karaoke.button {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 1;
+  max-width: 90%;
+  margin: 0 auto;
+  color: #fff;
+  cursor: pointer;
+}
+
+.player.buttom .progress span {
+  background-color: #fff;
+}
+
+.karaoke-content p span.word {
+  position: relative;
+}
+
+.karaoke-content p span.word span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  overflow: hidden;
+}
