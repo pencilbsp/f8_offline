@@ -1,5 +1,5 @@
-var songName = "Tòng Phu";
-var singerName = "Keyo";
+var songName = "Hoa Cỏ Lau";
+var singerName = "Phong Max";
 
 /**
  * Khởi tạo yêu cầu dùng GPU để render các câu hát

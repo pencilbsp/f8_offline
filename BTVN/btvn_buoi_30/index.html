@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h4 class="title">Doc Editor</h4>
+      <hr />
+      <div class="controls">
+        <div class="menu-bar">
+          <div class="dropdown">
+            <button>
+              File
+              <img src="ArrowDownIcon.svg" alt="ArrowDownIcon" />
+            </button>
+            <ul class="menu">
+              <li>New</li>
+              <li>Save as TXT</li>
+              <li>Save as PDF</li>
+            </ul>
+          </div>
+
+          <input id="file-name" type="text" value="Untitled" />
+        </div>
+        <div class="actions">
+          <button id="bold">
+            <b>B</b>
+          </button>
+          <button id="underline">
+            <u>U</u>
+          </button>
+          <button id="italic">
+            <i>I</i>
+          </button>
+          <input id="foreColor" type="color">
+        </div>
+      </div>
+      <div class="editor" id="content" contenteditable="true"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
