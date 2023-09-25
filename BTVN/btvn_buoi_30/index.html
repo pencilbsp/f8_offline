@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
   </head>
   <body>
     <div class="container">
@@ -18,9 +24,9 @@
               <img src="ArrowDownIcon.svg" alt="ArrowDownIcon" />
             </button>
             <ul class="menu">
-              <li>New</li>
-              <li>Save as TXT</li>
-              <li>Save as PDF</li>
+              <li onclick="newFile()">New</li>
+              <li onclick="saveToTxt()">Save as TXT</li>
+              <li onclick="saveToPdf()">Save as PDF</li>
             </ul>
           </div>
 
@@ -36,7 +42,7 @@
           <button id="italic">
             <i>I</i>
           </button>
-          <input id="foreColor" type="color">
+          <input id="foreColor" type="color" />
         </div>
       </div>
       <div class="editor" id="content" contenteditable="true"></div>
