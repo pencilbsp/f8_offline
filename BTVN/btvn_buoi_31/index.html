@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Link Download</title>
+    <style>
+      body {
+        background-color: #03bdf0;
+        color: white;
+        height: 100vh;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 32px;
+      }
+
+      .counter {
+        background-color: orange;
+        padding: 8px;
+        width: 34px;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 28px;
+      }
+
+      .get-link {
+        border: 1px solid white;
+        border-radius: 99px;
+        background: none;
+        color: white;
+        padding: 10px 16px;
+        cursor: pointer;
+      }
+
+      .get-link:disabled {
+        cursor: not-allowed;
+        color: rgb(234, 234, 234);
+        border-color: rgb(234, 234, 234);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Get Link</h2>
+      <div id="counter" class="counter">30</div>
+      <button id="get-link" class="get-link" disabled>Get Link</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
