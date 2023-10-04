@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm kiếm bằng giọn nói</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 16px;
+      }
+
+      .box {
+        text-align: center;
+      }
+
+      .box h1 {
+        margin: 36px 0;
+      }
+
+      .box button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .box button + p {
+        display: none;
+      }
+
+      .box button.listening + p {
+        display: initial;
+      }
+
+      .box button:hover {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h1>Bạn muốn làm gì? Hãy nói cho F8 biết</h1>
+        <button id="button">Bấm vào đây để nói</button>
+        <p id="status">Đang nghe...</p>
+        <div id="result" style="display: none;">Đã thực hiện xong</div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
