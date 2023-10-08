@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MagicZoom</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <a href="pexels-mike-bird-170811.jpg" class="MagicZoom">
+      <img width="400" src="pexels-mike-bird-170811.jpg" alt="" />
+    </a>
+
+    <script>
+      window.addEventListener("load", (event) => {
+        new MagicZoom(document.querySelector("a.MagicZoom"), { zoomWidth: 400 });
+      });
+    </script>
+  </body>
+</html>
