@@ -7,6 +7,7 @@ const finishedTodos = document.getElementById("finished-todos");
 const todoFrom = todoModel.querySelector("form");
 const inputTodo = todoFrom.querySelector("input");
 const showModelBtn = document.getElementById("show-model-btn");
+const editingView = document.querySelector("input[type='search']");
 const cancelModelBtn = todoModel.querySelector("button[type='button']");
 
 const hideModel = () => todoModel.classList.remove("active");
@@ -20,31 +21,34 @@ finishedTodos.addEventListener("click", function () {
 showModelBtn.addEventListener("click", showModel);
 cancelModelBtn.addEventListener("click", hideModel);
 
+editingView.addEventListener("input", function () {
+  render(this.value);
+});
+
 todoFrom.addEventListener("submit", function (event) {
   event.preventDefault();
   const formData = new FormData(this);
   const todoContent = formData.get("todo");
   const editTodoId = this.dataset.edit;
-  const input = todoFrom.querySelector("input");
 
   if (editTodoId) {
-    const todoItem = TodoItem.findById(editTodoId);
+    const todoItem = TodoItem.findById(+editTodoId);
     todoItem.changeContent(todoContent);
     this.removeAttribute("data-edit");
-    input.value = "";
+    inputTodo.value = "";
   } else {
     new TodoItem(todoContent);
   }
 
   this.reset();
   hideModel();
-  render(false);
+  render();
 });
 
 class TodoItem {
   constructor(content) {
     this.finish = false;
-    this.id = "todo-" + Date.now();
+    this.id = Date.now();
 
     const todoBox = document.createElement("div");
     todoBox.dataset.id = this.id;
@@ -106,15 +110,28 @@ class TodoItem {
   }
 }
 
-function updateFinishTodoCount() {
-  const finishTodoCount = Array.from(TodoMap.entries()).filter((e) => e[1].finish).length;
+function updateFinishTodoCount(TodoArray) {
+  const finishTodoCount = (TodoArray || getQueryResult()).filter((e) => e[1].finish).length;
   document.getElementById("todo-finish-count").textContent = finishTodoCount;
+}
+
+function getQueryResult(query = editingView.value) {
+  if (typeof query === "string" && query !== "") query = query.toLowerCase();
+  return Array.from(TodoMap).filter((item) => {
+    const todo = item[1];
+    let isFoundTodo = true;
+    if (query && !todo.todoContent.textContent.toLowerCase().includes(query)) isFoundTodo = false;
+    if (!isFoundTodo) todo.root.remove();
+    return isFoundTodo;
+  });
 }
 
 function render(query) {
   const isShowFinishTodo = finishedTodos.classList.contains("active");
+  const TodoArray = getQueryResult(query);
 
-  TodoMap.forEach((todo) => {
+  TodoArray.forEach((item) => {
+    const todo = item[1];
     if (!todoList.contains(todo.root) && !todo.finish) {
       todoList.children[0].append(todo.root);
     }
@@ -128,5 +145,5 @@ function render(query) {
     }
   });
 
-  updateFinishTodoCount();
+  updateFinishTodoCount(TodoArray);
 }
