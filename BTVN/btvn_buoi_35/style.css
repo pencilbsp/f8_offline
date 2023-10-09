@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.completed-todos {
+  @apply bg-gray-400 hover:bg-gray-500 focus:ring-gray-100 mt-2.5 flex items-center gap-2 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-4 transition;
+}
+
+.completed-todos.active {
+  @apply bg-emerald-700 hover:bg-emerald-800 focus:ring-emerald-300 mt-2.5 flex items-center gap-2 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-4;
+}
+
+.completed-todos.active img {
+  @apply rotate-0;
+}
+
+.todo-model {
+  @apply hidden;
+}
+
+.todo-model.active {
+  @apply fixed bottom-0 left-0 right-0 top-0 z-50 flex items-center justify-center bg-gray-700/60 p-4;
+}
+
+.todo-item {
+  @apply mt-2.5 flex w-full items-center justify-between bg-white p-4 rounded-lg border border-gray-200 shadow;
+}
+
+.todo-item > span {
+  @apply font-normal text-gray-700;
+}
+
+.todo-item > div {
+  @apply flex gap-2;
+}
+
+.todo-item > div > button {
+  @apply flex h-10 w-10 items-center justify-center rounded-lg focus:outline-none focus:ring-4;
+}
+
+.todo-item > div > button.delete {
+  @apply bg-rose-700 hover:bg-rose-800 focus:ring-rose-300;
+}
+
+.todo-item > div > button.edit {
+  @apply bg-blue-700 hover:bg-blue-800 focus:ring-blue-300;
+}
+
+.todo-item > div > button.check {
+  @apply bg-gray-400 hover:bg-emerald-800 focus:ring-emerald-300;
+}
+
+.todo-item > div > button.finished {
+  @apply bg-emerald-700 hover:bg-emerald-800 focus:ring-emerald-300;
+}
+
+.todo-item > div > button > img {
+  @apply h-4 w-4;
+}
