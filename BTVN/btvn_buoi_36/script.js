@@ -2,7 +2,7 @@ let page = 1
 const statusElm = document.querySelector(".load-status")
 
 const fetchPosts = async (query = { limit: 12, page: 1 }) => {
-    let apiUrl = "/api/posts"
+    let apiUrl = "https://f8.pendev.cc/api/posts"
     if (Object.keys(query).length > 0) {
         apiUrl += "?" + new URLSearchParams(query).toString()
     }
