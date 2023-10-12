@@ -3,7 +3,7 @@ import { cors } from '@elysiajs/cors'
 
 const app = new Elysia()
     .use(cors())
-    .use('/', () => "Hello, i am Pen")
+    .get('/', () => "Hello, i am Pen")
     .get('/api/posts', async ({ query }) => {
         const f = Bun.file("./posts.json")
         const text = await f.text()
