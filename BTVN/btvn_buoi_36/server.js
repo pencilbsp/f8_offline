@@ -1,12 +1,12 @@
 import { Elysia } from 'elysia'
+import { readFileSync } from 'node:fs'
 import { cors } from '@elysiajs/cors'
 
 const app = new Elysia()
     .use(cors())
     .get('/', () => "Hello, i am Pen")
     .get('/api/posts', async ({ query }) => {
-        const f = Bun.file("./posts.json")
-        const text = await f.text()
+        const text = readFileSync('posts.json', 'utf8')
         const allPost = JSON.parse(text)
 
         const page = query.page || 1
