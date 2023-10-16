@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "question": "Bạn có phải lập trình viên không?",
+    "options": [
+      {
+        "id": 11,
+        "value": "Không"
+      },
+      {
+        "id": 12,
+        "value": "Có"
+      },
+      {
+        "id": 13,
+        "value": "Chắc chắn rồi"
+      },
+      {
+        "id": 14,
+        "value": "Không biết"
+      }
+    ],
+    "answerIds": [12, 13]
+  },
+  {
+    "id": 2,
+    "question": "Con chó có mấy cái đùi?",
+    "options": [
+      {
+        "id": 21,
+        "value": "1"
+      },
+      {
+        "id": 22,
+        "value": "2"
+      },
+      {
+        "id": 23,
+        "value": "3"
+      },
+      {
+        "id": 24,
+        "value": "4"
+      }
+    ],
+    "answerIds": [24]
+  }
+]
