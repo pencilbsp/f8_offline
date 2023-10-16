@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Trắc nghiệm vui vẻ</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="quiz-box">
+        <button class="start-btn show">Bắt đầu</button>
+
+        <div class="count-down">
+          <span class="count-number"></span>
+        </div>
+
+        <div class="quiz-content">
+          <div class="progress-bar">
+            <div style="width: 0%"></div>
+          </div>
+
+          <div class="header">
+            <div class="question-count">
+              <span class="current"></span>/<span class="total"></span>
+            </div>
+            <div class="streak">
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+            <div class="scores">Score: <span>0</span></div>
+          </div>
+
+          <div class="content">
+            <div class="overlay">
+              <div class="lds-spinner">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+
+            <div class="question">
+              <p></p>
+            </div>
+
+            <div class="options"></div>
+
+            <div class="answer-result">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
