@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loading-wrap {
+  @apply fixed inset-0 z-50 bg-white flex items-center justify-center;
+}
+
+.loading-icon-spin {
+  @apply animate-spin h-10 w-10 text-white;
+}

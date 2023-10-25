@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Đăng nhập</title>
+  </head>
+  <body>
+    <div
+      class="w-screen h-screen fixed inset-0 flex justify-center items-center bg-gray-900 bg-opacity-30"
+    >
+      <div
+        class="flex flex-col flex-shrink overflow-hidden w-full min-h-[890px] sm:w-[600px] sm:min-h-[400px] bg-white sm:rounded-2xl"
+      >
+        <div class="flex flex-col flex-shrink flex-grow">
+          <div class="flex items-center px-4 h-[53px]">
+            <div class="basis-1/2">
+              <a
+                href="index.html"
+                class="inline-flex p-2 flex-shrink-0 rounded-full hover:bg-gray-100 transition-colors -ml-2"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true" class="w-5 h-5">
+                  <g>
+                    <path
+                      d="M10.59 12L4.54 5.96l1.42-1.42L12 10.59l6.04-6.05 1.42 1.42L13.41 12l6.05 6.04-1.42 1.42L12 13.41l-6.04 6.05-1.42-1.42L10.59 12z"
+                    ></path>
+                  </g>
+                </svg>
+              </a>
+            </div>
+            <div>
+              <svg viewBox="0 0 24 24" aria-label="X" role="img" class="h-7">
+                <g>
+                  <path
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <div class="max-w-[600px] w-full flex flex-col flex-shrink flex-grow">
+            <div
+              class="pb-12 min-w-[364px] max-w-[364px] px-8 m-auto overflow-hidden"
+            >
+              <div class="overflow-auto">
+                <h1 class="my-5 text-3xl font-bold">Đăng nhập vào X</h1>
+
+                <form class="flex flex-col gap-4">
+                  <label for="" class="flex rounded border border-blue-500">
+                    <div class="flex flex-shrink flex-grow flex-col relative">
+                      <div
+                        class="flex w-full h-full absolute justify-between z-0"
+                      >
+                        <div class="px-2 pt-2 text-sm text-blue-500">
+                          <span class="text-sm">Email hoặc số điện thoại</span>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-shrink flex-grow px-2 pt-3 pb-2 mt-4 relative z-0"
+                      >
+                        <div class="flex w-full">
+                          <input
+                            class="w-full outline-none bg-transparent"
+                            type="email"
+                            name="email"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+                  <label for="" class="flex rounded border border-blue-500">
+                    <div class="flex flex-shrink flex-grow flex-col relative">
+                      <div
+                        class="flex w-full h-full absolute justify-between z-0"
+                      >
+                        <div class="px-2 pt-2 text-sm text-blue-500">
+                          <span class="text-sm">Mật khẩu</span>
+                        </div>
+                      </div>
+                      <div
+                        class="flex flex-shrink flex-grow px-2 pt-3 pb-2 mt-4 relative z-0"
+                      >
+                        <div class="flex w-full">
+                          <input
+                            class="w-full outline-none bg-transparent"
+                            type="password"
+                            name="password"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </label>
+
+                  <button
+                    id="submit-btn"
+                    class="flex w-full rounded-full bg-slate-900 text-white justify-center items-center py-3 disabled:opacity-80 disabled:cursor-not-allowed"
+                  >
+                    <svg
+                      class="animate-spin -ml-1 mr-3 h-5 w-5 text-white hidden"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        class="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        stroke-width="4"
+                      ></circle>
+                      <path
+                        class="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      ></path>
+                    </svg>
+                    <span>Đăng nhập</span>
+                  </button>
+                </form>
+
+                <div class="mt-10">
+                  <span class="text-gray-500">Chưa có tài khoản?</span>
+                  <a class="text-blue-500" href="signup.html">Đăng ký ngay</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="login.js"></script>
+  </body>
+</html>
