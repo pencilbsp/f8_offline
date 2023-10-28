@@ -1,0 +1,15 @@
+{
+  "name": "bundler",
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel --port 80",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.1",
+    "parcel": "^2.10.1",
+    "process": "^0.11.10",
+    "sass": "^1.69.5"
+  },
+  "type": "module"
+}
