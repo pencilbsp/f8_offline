@@ -13,7 +13,7 @@ const rootElm = document.querySelector("#app");
  */
 
 console.log(process.env.NODE_ENV);
-const rootPath = process.env.NODE_ENV === "development" ? "/" : "/BTVN/btvn_buoi_39/dist";
+const rootPath = process.env.NODE_ENV === "development" ? "/" : "/f8_offline/BTVN/btvn_buoi_39/dist";
 
 export function router(paths = [], layout) {
   const navigoRouter = new Navigo(rootPath);
