@@ -12,7 +12,7 @@ const rootElm = document.querySelector("#app");
  * @param {Path[]} paths
  */
 
-// console.log(process.env.NODE_ENV);
+console.log(process.env.NODE_ENV);
 const rootPath = process.env.NODE_ENV === "development" ? "/" : "/BTVN/btvn_buoi_39/dist";
 
 export function router(paths = [], layout) {
