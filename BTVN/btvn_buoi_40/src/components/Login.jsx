@@ -38,7 +38,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="fixed inset-0 z-20 bg-slate-900/25 backdrop-blur container flex justify-center items-center">
+      <div className="fixed inset-0 z-20 bg-slate-900/25 backdrop-blur flex justify-center items-center">
         <div className="max-w-[320px] flex flex-col gap-2 p-4 bg-white text-gray-700 rounded-lg shadow-md">
           <h2 className="text-xl font-semibold">Đăng nhập</h2>
           <p className="text-gray-600">Điền địa chỉ email đã đăng ký với F8</p>
