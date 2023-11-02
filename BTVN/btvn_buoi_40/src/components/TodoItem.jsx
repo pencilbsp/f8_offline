@@ -1,8 +1,9 @@
+import { toast } from "sonner";
 import React, { Component } from "react";
-import { Trash2Icon, FileEditIcon, CheckCheckIcon } from "lucide-react";
+import { Trash2Icon, FileEditIcon, CheckCheckIcon, XIcon } from "lucide-react";
+
 import cn from "../utils/cn";
 import request from "../utils/request";
-import { toast } from "sonner";
 
 export default class TodoItem extends Component {
   constructor(props) {
@@ -95,30 +96,39 @@ export default class TodoItem extends Component {
               <span className="ml-2">Đã hoàn thành</span>
             </label>
             <div className="flex gap-4 ml-auto">
-              <button
-                type="button"
-                onClick={this.editModeToggle}
-                disabled={this.state.isLoading}
-                className={cn(
-                  "text-blue-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed",
-                  this.state.editMode && "hidden"
-                )}
-              >
-                <FileEditIcon size={16} className="mr-1" />
-                Sửa
-              </button>
-              <button
-                type="submit"
-                disabled={this.state.isLoading}
-                className={cn(
-                  "text-orange-500 items-center hidden disabled:opacity-50 disabled:cursor-not-allowed",
-                  this.state.editMode && "flex"
-                )}
-                // onClick={this.editModeToggle}
-              >
-                <CheckCheckIcon size={16} className="mr-1" />
-                Cập nhật
-              </button>
+              {this.state.editMode ? (
+                <>
+                  <button
+                    type="button"
+                    disabled={this.state.isLoading}
+                    className={cn("text-green-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed")}
+                    onClick={this.editModeToggle}
+                  >
+                    <XIcon size={16} className="mr-1" />
+                    Thoát
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={this.state.isLoading}
+                    className={cn("text-orange-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed")}
+                    // onClick={this.editModeToggle}
+                  >
+                    <CheckCheckIcon size={16} className="mr-1" />
+                    Cập nhật
+                  </button>
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={this.editModeToggle}
+                  disabled={this.state.isLoading}
+                  className={cn("text-blue-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed")}
+                >
+                  <FileEditIcon size={16} className="mr-1" />
+                  Sửa
+                </button>
+              )}
+
               <button
                 type="button"
                 disabled={this.state.isLoading}

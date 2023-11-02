@@ -1,5 +1,6 @@
 import { toast } from "sonner";
 import { Component } from "react";
+import { LogOutIcon } from "lucide-react";
 
 import TodoItem from "./TodoItem";
 import request from "../utils/request";
@@ -43,12 +44,15 @@ export default class Todo extends Component {
     this.setState({ isLoading: false });
   };
 
+  handleLogout = () => {
+    request.setAuth(null, null);
+  };
+
   componentDidUpdate = async () => {
     try {
       if (this.props.user && !this.load) {
         const response = await request.http("/todos");
         const data = await response.json();
-        console.log(data.data.listTodo);
         if (Array.isArray(data.data.listTodo)) {
           this.setState({ todos: data.data.listTodo });
         }
@@ -62,9 +66,19 @@ export default class Todo extends Component {
   render() {
     return (
       <div className="p-4 bg-sky-950 text-white flex flex-col items-center gap-4 max-w-lg mx-auto rounded-xl">
-        <h1 className="text-center font-bold">
-          {this.props.user ? `Chào mừng ${this.props.user} quay trở lại 🥳` : "Bạn chưa đăng nhập Todo!!!"}
-        </h1>
+        <div className="text-center font-bold flex flex-col items-center gap-2">
+          {this.props.user ? (
+            <>
+              <h1>Chào mừng {this.props.user} quay trở lại 🥳</h1>
+              <button className="text-red-500 flex gap-1 items-center" onClick={this.handleLogout}>
+                <LogOutIcon size={16} />
+                Đăng xuất
+              </button>
+            </>
+          ) : (
+            <h1>Bạn chưa đăng nhập Todo!!!</h1>
+          )}
+        </div>
         <form className="border-b pb-1.5 border-b-green-500" onSubmit={this.handleFormSubmit}>
           <input
             type="text"
