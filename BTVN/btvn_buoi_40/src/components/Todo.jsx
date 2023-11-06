@@ -1,15 +1,18 @@
+/* eslint-disable react/prop-types */
 import { toast } from "sonner";
 import { Component } from "react";
-import { LogOutIcon } from "lucide-react";
+import { LogOutIcon, SearchIcon } from "lucide-react";
 
 import TodoItem from "./TodoItem";
 import request from "../utils/request";
+import debounce from "lodash.debounce";
+import SpinerIcon from "./LoadingIcon";
 
 export default class Todo extends Component {
   constructor(props) {
     super(props);
     this.load = false;
-    this.state = { todos: [], isLoading: false };
+    this.state = { todos: [], isLoading: false, q: "", searchTodo: [], searching: false };
   }
 
   handleDeleteTodo = async (id) => {
@@ -42,6 +45,28 @@ export default class Todo extends Component {
     }
 
     this.setState({ isLoading: false });
+  };
+
+  searchTodo = async (q) => {
+    try {
+      this.setState({ searching: true });
+      const query = new URLSearchParams({ q });
+      const response = await request.http("/todos?" + query.toString());
+      const data = await response.json();
+      this.setState({ searchTodo: data?.data?.listTodo || [] });
+    } catch (error) {
+      console.log(error.message);
+    }
+
+    this.setState({ searching: false });
+  };
+
+  debouncedLog = debounce(this.searchTodo, 500);
+
+  handleSearchTodo = (event) => {
+    const q = event.target.value;
+    this.setState({ q });
+    this.debouncedLog(q);
   };
 
   handleLogout = () => {
@@ -93,8 +118,28 @@ export default class Todo extends Component {
             Thêm mới
           </button>
         </form>
-        <div className="flex w-full">
-          {this.state.todos.length > 0 ? (
+        <div className="flex flex-col gap-4 w-full">
+          <div className="flex items-center w-full rounded-lg border">
+            <span className="ml-2">{this.state.searching ? <SpinerIcon /> : <SearchIcon size={20} />}</span>
+            <input
+              onChange={this.handleSearchTodo}
+              type="text"
+              className="bg-transparent focus:outline-none px-2 py-1"
+              placeholder="Tìm kiếm todo"
+            />
+          </div>
+
+          {this.state.q ? (
+            this.state.searchTodo.length > 0 ? (
+              <ul className="w-full flex flex-col gap-2">
+                {this.state.searchTodo.map((todo) => (
+                  <TodoItem key={todo._id} todo={todo} onDeleleSuccess={this.handleDeleteTodo} />
+                ))}
+              </ul>
+            ) : (
+              <p>Không tìm thấy todo nào!!! 😥</p>
+            )
+          ) : this.state.todos.length > 0 ? (
             <ul className="w-full flex flex-col gap-2">
               {this.state.todos.map((todo) => (
                 <TodoItem key={todo._id} todo={todo} onDeleleSuccess={this.handleDeleteTodo} />

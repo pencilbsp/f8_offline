@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { toast } from "sonner";
 import React, { Component } from "react";
 import { Trash2Icon, FileEditIcon, CheckCheckIcon, XIcon } from "lucide-react";
@@ -9,12 +10,31 @@ export default class TodoItem extends Component {
   constructor(props) {
     super(props);
     this.editRef = React.createRef();
-    this.state = { editMode: false, isLoading: false, isCompleted: this.props.todo.isCompleted };
+    this.deletePending = false;
+    this.state = {
+      editMode: false,
+      isLoading: false,
+      todo: this.props.todo.todo,
+      isCompleted: this.props.todo.isCompleted,
+    };
   }
 
   editModeToggle = () => {
     this.setState({ editMode: !this.state.editMode });
     this.editRef.current && !this.state.editMode && this.editRef.current.focus();
+  };
+
+  handleExitEditMode = () => {
+    const currentTodo = this.editRef.current.value;
+    if (currentTodo !== this.state.todo) {
+      this.editRef.current.value = this.state.todo;
+    }
+
+    if (this.state.isCompleted !== this.props.todo.isCompleted) {
+      this.setState({ isCompleted: this.props.todo.isCompleted });
+    }
+
+    this.editModeToggle();
   };
 
   deleteTodo = async (id) => {
@@ -44,7 +64,7 @@ export default class TodoItem extends Component {
     const data = await response.json();
     if (data.code !== 200) throw new Error(data.message);
     this.editModeToggle();
-    this.setState({ isLoading: false });
+    this.setState({ isLoading: false, todo, isCompleted });
     return data.message;
   };
 
@@ -60,13 +80,28 @@ export default class TodoItem extends Component {
   };
 
   handleDeleteTodo = (id) => {
-    toast.promise(() => this.deleteTodo(id), {
-      loading: "Đang xoá todo...",
-      success: (message) => message,
-      error: (error) => {
-        this.setState({ isLoading: false });
-        return error.message;
+    if (this.deletePending) return;
+
+    this.deletePending = true;
+    toast.warning("Bạn chắc chắn muốn xoá todo này?", {
+      action: {
+        label: "Xoá",
+        onClick: () =>
+          toast.promise(() => this.deleteTodo(id), {
+            loading: "Đang xoá todo...",
+            success: (message) => message,
+            error: (error) => {
+              this.setState({ isLoading: false });
+              return error.message;
+            },
+          }),
       },
+      cancel: {
+        label: "Huỷ",
+        onClick: () => (this.deletePending = false),
+      },
+      onDismiss: () => (this.deletePending = false),
+      onAutoClose: () => (this.deletePending = false),
     });
   };
 
@@ -102,7 +137,7 @@ export default class TodoItem extends Component {
                     type="button"
                     disabled={this.state.isLoading}
                     className={cn("text-green-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed")}
-                    onClick={this.editModeToggle}
+                    onClick={this.handleExitEditMode}
                   >
                     <XIcon size={16} className="mr-1" />
                     Thoát

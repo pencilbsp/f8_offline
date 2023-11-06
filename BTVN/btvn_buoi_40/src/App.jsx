@@ -27,7 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="w-full h-full container p-4">
-        <Toaster richColors />
+        <Toaster richColors closeButton position="top-right" />
         <Todo user={this.state.isLogin} />
         {!this.state.isLogin && <Login onLoginSuccess={this.handleLoginSuccess} />}
       </div>
