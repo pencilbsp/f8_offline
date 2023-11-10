@@ -1,0 +1,22 @@
+body {
+  width: 100%;
+  height: 100vh;
+}
+
+.theme * {
+  color: black;
+}
+
+/* .theme.dark * {
+  color: white;
+} */
+
+.theme.dark {
+  background: black;
+}
+
+#root,
+.theme {
+  width: 100%;
+  height: 100%;
+}
