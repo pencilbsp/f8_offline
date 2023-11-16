@@ -12,6 +12,7 @@
   "dependencies": {
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/themes": "^2.0.1",
+    "canvas-confetti": "^1.9.1",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "lucide-react": "^0.292.0",

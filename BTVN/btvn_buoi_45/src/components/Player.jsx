@@ -1,4 +1,5 @@
 import { toast } from "sonner";
+import confetti from "canvas-confetti";
 import { useMemo, useRef, useState } from "react";
 import { Button, Slider, TextField } from "@radix-ui/themes";
 
@@ -53,6 +54,7 @@ export default function Player({ min = 1, max = 2048, defaultValue = [100] }) {
       } else if (number < targetNumber) {
         toast.warning("Bạn cần tăng một chút...");
       } else {
+        confetti();
         toast.success("Bạn đã đoán chính xác!");
         handleRestart(list, targetNumber, tryCount);
       }
