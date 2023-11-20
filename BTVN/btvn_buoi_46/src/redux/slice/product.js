@@ -4,7 +4,6 @@ import request from "../../utils/request";
 import { ACTION_STATE, PRODUCT_PAGE_LIMIT } from "../../utils/config";
 
 const initialState = {
-  page: 1,
   error: null,
   totalPage: 0,
   products: [],
@@ -14,11 +13,6 @@ const initialState = {
 export const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {
-    fetchProducts: (state, action) => {
-      state.products = action.payload;
-    },
-  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchProducts.pending, (state) => {
@@ -36,12 +30,10 @@ export const productSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
-export const { addToCart } = productSlice.actions;
-
 const defaultParams = { limit: PRODUCT_PAGE_LIMIT, page: 1 };
 //
 export const fetchProducts = createAsyncThunk("fetchProducts", async (params = defaultParams) => {
+  if (!params.limit) params.limit = PRODUCT_PAGE_LIMIT;
   const response = await request.get("/products", { params });
   return response.data.data;
 });
