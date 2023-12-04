@@ -51,7 +51,7 @@ export default async function Home({ params: { lang } }) {
             <a className="text-blue-500 hover:underline" href="https://react.dev" target="_blank">
               reactjs
             </a>
-            ,{" "}
+            , redux,{" "}
             <a className="text-blue-500 hover:underline" href="https://nextjs.org" target="_blank">
               nextjs
             </a>
