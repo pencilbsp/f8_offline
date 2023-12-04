@@ -1,0 +1,14 @@
+{
+  "home": {
+    "headTitle": "Được tạo bằng cách tạo ứng dụng tiếp theo",
+    "title": "Xin chào, tôi là Pencil",
+    "okieBtn": "Được rồi, hãy hoàn thành nó sớm nhé",
+    "notOkieBtn": "Không được, bạn quá lười",
+    "skill1": "Mình biết code ",
+    "studying": "đang học",
+    "studyAt": "Mình học ở F8 nè",
+    "skill2": "Mình biết viết truy vấn",
+    "message": "Mình đang bận chạy deadline dự án ở công ty nên chưa có thời gian hoàn thiện bài tập này. Mình sẽ hoàn thành nó vào tuần sau... Heheeeee",
+    "hobby": "Mình thích code và nhậu! 🤩"
+  }
+}
