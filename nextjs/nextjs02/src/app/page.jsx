@@ -1,6 +1,7 @@
-import Image from "next/image"
+export default async function Home() {
+  const response = await fetch("https://jsonplaceholder.typicode.com/posts")
+  const data = await response.json()
 
-export default function Home() {
   return (
     <main className="">
       <h1>Home Page</h1>

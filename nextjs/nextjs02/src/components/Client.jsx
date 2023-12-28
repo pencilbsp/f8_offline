@@ -1,0 +1,5 @@
+"use client"
+
+export default function ClientComponent({ children }) {
+  return <div className="">{children}</div>
+}
