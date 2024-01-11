@@ -1,0 +1,80 @@
+<div class="container max-w-screen-lg mx-auto">
+  <h1 class="text-xl font-bold my-3">Danh sách người dùng</h1>
+
+  <a href="/users/add" class="border px-3 py-1 rounded-lg">Thêm người dùng</a>
+
+  <% if (message) { %>
+
+  <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg relative mt-3" role="alert">
+    <span class="block sm:inline"><%= message %></span>
+    <span class="absolute top-0 bottom-0 right-0 px-4 py-3">
+      <svg
+        class="fill-current h-6 w-6 green-red-500"
+        role="button"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <title>Close</title>
+        <path
+          d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z"
+        />
+      </svg>
+    </span>
+  </div>
+  <% } %>
+
+  <form class="flex space-x-3 w-full my-3" action="">
+    <select name="status" class="border rounded-lg bg-white overflow-hidden">
+      <option value="active">Kích hoạt</option>
+      <option value="inactive">Chưa kích hoạt</option>
+    </select>
+
+    <input type="text" name="email" class="border rounded-lg px-3 py-1 flex-1" placeholder="Email" />
+
+    <button type="submit" class="border px-3 py-1 rounded-lg">Tìm kiếm</button>
+  </form>
+
+  <table class="border-collapse w-full border border-slate-400 dark:border-slate-500text-sm shadow-sm">
+    <thead class="bg-slate-50">
+      <tr>
+        <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 text-left">STT</th>
+        <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 text-left">Tên</th>
+        <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 text-left">Email</th>
+        <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 text-left truncate">
+          Trạng thái
+        </th>
+        <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 text-left">
+          Thời gian
+        </th>
+        <th class="border border-slate-300 dark:border-slate-600 font-semibold p-4 text-slate-900 text-left truncate">
+          Hành động
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(function(user, index){ %>
+      <tr>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+          <%= index + 1 %>
+        </td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+          <%= user.name %>
+        </td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+          <%= user.email %>
+        </td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+          <%= user.status %>
+        </td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400">
+          <%= user.created_at %>
+        </td>
+        <td class="border border-slate-300 dark:border-slate-700 p-4 text-slate-500 dark:text-slate-400 flex">
+          <a class="border px-2 py-1 text-red-500" href="/users/delete/<%= user.id %>">Xoá</a>
+          <a class="border px-2 py-1 text-blue-500" href="/users/<%= user.id %>">Sửa</a>
+        </td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

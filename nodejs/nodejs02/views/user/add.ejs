@@ -1,0 +1,89 @@
+<form class="mx-auto max-w-md space-y-6  min-h-dvh flex flex-col items-center justify-center" action="/users/add" method="post">
+  <input type="number" name="id" value="<%= req.preFormData.id %>" hidden />
+  <div class="space-y-2 text-center">
+    <h1 class="text-3xl font-bold">
+      <% if (mode === "edit") { %>
+        Sửa đổi thông tin người dùng
+      <%} else { %>
+        Thêm người dùng
+      <% } %>
+    </h1>
+  </div>
+  <div class="space-y-4 w-full ">
+    <div class="space-y-2">
+      <label
+        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        for="name"
+      >
+        Name
+      </label>
+      <input
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        id="name"
+        placeholder="Enter your name"
+        required=""
+        name="name"
+        value="<%= req.preFormData.name %>"
+      />
+      <p class="text-xs text-red-500"><%= req.errors.name %></p>
+    </div>
+    <div class="space-y-2">
+      <label
+        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        for="email"
+      >
+        Email
+      </label>
+      <input
+        class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        id="email"
+        placeholder="Enter your email"
+        required=""
+        type="email"
+        name="email"
+        value="<%= req.preFormData.email %>"
+      />
+      <p class="text-xs text-red-500"><%= req.errors.email %></p>
+    </div>
+    <div class="space-y-2">
+      <label
+        class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        for="status"
+      >
+        Status
+      </label>
+      <select
+        name="status"
+        type="button"
+        role="combobox"
+        aria-controls="radix-:rp:"
+        aria-expanded="false"
+        aria-autocomplete="none"
+        dir="ltr"
+        data-state="closed"
+        class="flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+        aria-required="true"
+      >
+        <option value="0" <%= req.preFormData.status == "0" && "selected" %>>Chưa kích hoạt</option>
+        <option value="1" <%= req.preFormData.status == "1" && "selected" %>>Đã kích hoạt</option>
+      </select>
+      <p class="text-xs text-red-500"><%= req.errors.status %></p>
+    </div>
+    <div class="flex space-x-2">
+      <button
+      class="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full"
+      type="submit"
+    >
+      <% if (mode === "edit") { %>
+        Sửa
+      <%} else { %>
+        Thêm
+      <% } %>
+    </button>
+
+    <% if (mode === "edit") { %>
+      <a class="border w-full px-4 flex items-center justify-center rounded-md" href="/users">Huỷ</a>
+    <%} %>
+    </div>
+  </div>
+</form>

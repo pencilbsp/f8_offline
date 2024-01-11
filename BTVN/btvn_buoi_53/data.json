@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "name": "Điện thoại Xiaomi 12 5G",
+      "sku": "234621",
+      "price": 13990000,
+      "discount_price": 9190000
+    },
+    {
+      "name": "Đồng hồ thông minh Xiaomi Redmi Watch 3 Active 46mm",
+      "sku": "311333",
+      "price": 1490000,
+      "discount_price": 890000
+    },
+    {
+      "name": "Laptop Lenovo IdeaPad 1 15AMN7 R5 7520U/8GB/256GB/Win11",
+      "sku": "82VG0061VN",
+      "price": 12690000,
+      "discount_price": 9990000
+    },
+    {
+      "name": "Điện thoại OPPO A57 128GB",
+      "sku": "285082",
+      "price": 4990000,
+      "discount_price": 3890000
+    },
+    {
+      "name": "Điện thoại iPhone 12 256GB",
+      "sku": "228737",
+      "price": 19990000,
+      "discount_price": 17190000
+    },
+    {
+      "name": "Chuột Bluetooth Apple MK2E3",
+      "sku": "251787",
+      "price": 2490000,
+      "discount_price": 1650000
+    },
+    {
+      "name": "Điện thoại iPhone 15 Pro 128GB",
+      "sku": "303831",
+      "price": 28290000
+    },
+    {
+      "name": "Điện thoại OPPO Reno8 T",
+      "sku": "299248",
+      "price": 8490000,
+      "discount_price": 6790000
+    },
+    {
+      "name": "Laptop Asus Vivobook X515EA i3 1115G4/8GB/512GB/Win11",
+      "sku": "EJ3948W",
+      "price": 11290000,
+      "discount_price": 9490000
+    }
+  ],
+  "users": [
+    {
+      "name": "Vũ Văn Thống",
+      "phone_number": "+84304216746",
+      "email": "pencil.bsp@gmail.com",
+      "shippings": [
+        {
+          "address": "998 P. Thành Trung, Trâu Quỳ, Gia Lâm, Hà Nội, Việt Nam",
+          "city": "Hà Nội",
+          "state": "Hà Nội",
+          "postal_code": "127723"
+        }
+      ]
+    },
+    {
+      "name": "Nguyễn Hữu Hưng",
+      "phone_number": "+84847666665",
+      "email": "huuhungnguyen2002@gmail.com",
+      "shippings": [
+        {
+          "address": "207 Đ. Thạch Bàn, Thạch Bàn, Long Biên, Hà Nội, Việt Nam",
+          "city": "Hà Nội",
+          "state": "Hà Nội",
+          "postal_code": "122600"
+        }
+      ]
+    },
+    {
+      "name": "Nguyễn Bá Đông",
+      "phone_number": "+84918915610",
+      "email": "nbdong205@gmail.com",
+      "shippings": [
+        {
+          "address": "452 phố Định Công Hạ, Phương Liệt, Thanh Xuân, Hà Nội, Việt Nam",
+          "city": "Hà Nội",
+          "state": "Hà Nội",
+          "postal_code": "129875"
+        }
+      ]
+    },
+    {
+      "name": "Lê Quốc Khánh",
+      "phone_number": "+84522707646",
+      "email": "lekhanhdhpt@gmail.com",
+      "shippings": [
+        {
+          "address": "458 Trần Vỹ, Mai Dịch, Cầu Giấy, Hà Nội, Việt Nam",
+          "city": "Hà Nội",
+          "state": "Hà Nội",
+          "postal_code": "123259"
+        }
+      ]
+    },
+    {
+      "name": "Phí Văn Đức",
+      "phone_number": "+84395584465",
+      "email": "phivanduc325@gmail.com",
+      "shippings": [
+        {
+          "address": "467 Trần Phú, P. Mộ Lao, Hà Đông, Hà Nội, Việt Nam",
+          "city": "Hà Nội",
+          "state": "Hà Nội",
+          "postal_code": "127738"
+        }
+      ]
+    }
+  ]
+}
