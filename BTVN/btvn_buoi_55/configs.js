@@ -9,4 +9,4 @@ export const VIEW_DIR = join(APP_DIR, "views")
 export const DATABASE_DIR = join(APP_DIR, "database")
 export const STATIC_DIR = join(APP_DIR, "..", "public")
 
-export const TIME_TO_USER_ACTIVE = 10 * 60 * 1000 // 10 phút
+export const TIME_TO_USER_ACTIVE = 30 * 60 * 1000 // 30 phút

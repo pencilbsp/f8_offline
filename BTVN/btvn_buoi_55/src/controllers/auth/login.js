@@ -21,7 +21,7 @@ export async function POST(req, res) {
 
     const avtiveTime = new Date(user.created_at).getTime()
     // Sau {TIME_TO_USER_ACTIVE} giờ đăng kí tài khoản không kích hoạt thì ko cho đăng nhập
-    if (Date.now() - TIME_TO_USER_ACTIVE) {
+    if (Date.now() - avtiveTime > TIME_TO_USER_ACTIVE) {
       throw new Error("Tài khoản chưa được kích hoạt")
     }
 
