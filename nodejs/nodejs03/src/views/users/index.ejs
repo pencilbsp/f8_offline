@@ -1,0 +1,51 @@
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h1>Danh sách người dùng</h1>
+  <a class="btn btn-primary" href="/users/create">Thêm</a>
+</div>
+
+<form class="row" action="" method="get">
+  <div class="col-3">
+    <select name="status" class="form-select col-auto" aria-label="Default select example">
+      <option value="">Chọn tất cả</option>
+      <option value="1" <%= query.status === '1' ? 'selected' : '' %>>Kích hoạt</option>
+      <option value="0" <%= query.status === '0' ? 'selected' : '' %>>Chưa kích hoạt</option>
+    </select>
+  </div>
+
+  <div class="col-7">
+    <input value="<%= query.keywords %>" name="keywords" class="form-control" id="keywords" placeholder="Từ khoá..." />
+  </div>
+
+  <div class="col-2 d-grid">
+    <button type="submit" class="btn btn-primary mb-3">Tìm kiếm</button>
+  </div>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Tên</th>
+      <th scope="col">Email</th>
+      <th scope="col">Trạng thái</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(function(user, index){ %>
+    <tr>
+      <th scope="row"><%- index + 1 %></th>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.status %></td>
+      <td>
+        <a href="/users/<%= user.id %>" type="button" class="btn btn-primary">Sửa</a>
+        <form action="/users/delete" method="post" style="display: inline-block;">
+          <input name="id" value="<%= user.id %>" hidden/>
+          <button type="submit" class="btn btn-danger">Xoá</button>
+        </form>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>

@@ -1,0 +1,29 @@
+
+<h1><%= user.id ? "Chỉnh sửa thông tin người dùng" : "Thêm người dùng" %></h1>
+
+<form class="w-50" method="post">
+  <input value="<%= user.id %>" type="text" hidden />
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input value="<%= user.email %>" name="email" type="email" class="form-control" id="email" aria-describedby="emailHelp" required/>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="name" class="form-label">Tên</label>
+    <input value="<%= user.name %>" name="name" class="form-control" id="name" required/>
+  </div>
+
+  <div class="mb-3">
+    <label for="status" class="form-label">Trạng thái</label>
+    <select id="status" class="form-select" aria-label="Default select example" required>
+      <option value="1" <%= user.status === true ? 'selected' : '' %>>Kích hoạt</option>
+      <option value="0" <%= user.status === false ? 'selected' : '' %>>Chưa kích hoạt</option>
+    </select>
+  </div>
+
+  <div class="d-flex gap-3">
+    <button type="submit" class="btn btn-primary w-50"><%= user.id ? "Cập nhật" : "Thêm" %></button>
+    <a href="/users" type="submit" class="btn btn-danger w-50">Huỷ</a>
+  </div>
+</form>
