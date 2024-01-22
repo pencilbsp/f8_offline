@@ -18,4 +18,18 @@ model User {
   verified   DateTime?
   created_at DateTime  @default(now())
   updated_at DateTime  @updatedAt
+  sessions   Session[]
+}
+
+model Session {
+  id         String   @id @default(uuid())
+  sid        String   @unique
+  user_id    Int
+  device     String
+  location   String?
+  expires_at DateTime
+  cookie     String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+  user       User     @relation(fields: [user_id], references: [id], onDelete: Cascade)
 }

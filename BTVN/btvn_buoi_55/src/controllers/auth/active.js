@@ -1,12 +1,12 @@
-import { TIME_TO_USER_ACTIVE } from "../../../configs.js"
-import { rootPaths } from "../../routes/paths.js"
 import prisma from "../../utils/prisma.js"
+import { rootPaths } from "../../routes/paths.js"
+import { TIME_TO_USER_ACTIVE } from "../../../configs.js"
 
 export async function POST(req, res) {
   try {
     const user = await prisma.user.findUnique({
       where: {
-        id: req.session.user.id,
+        id: req.session.user_id,
       },
     })
 

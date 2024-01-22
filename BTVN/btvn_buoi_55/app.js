@@ -5,13 +5,16 @@ import cookieParser from "cookie-parser"
 import expressEjsLayouts from "express-ejs-layouts"
 
 // configs
-import { APP_PORT, COOKIE_SECRET, STATIC_DIR, VIEW_DIR } from "./configs.js"
+import { APP_PORT, COOKIE_SECRET, SESSION_EXPIRES_TIME, STATIC_DIR, VIEW_DIR } from "./configs.js"
 // routes
 import appRoutes from "./src/routes/index.js"
 // middlewares
 import validate from "./src/middlewares/validate.js"
 
-const sessionStore = new session.MemoryStore()
+import prisma from "./src/utils/prisma.js"
+import PrismaStore from "./src/utils/session-store.js"
+
+const sessionStore = new PrismaStore(prisma)
 
 const app = Express()
 
@@ -29,11 +32,11 @@ app.use(expressEjsLayouts)
 app.use(cookieParser(COOKIE_SECRET))
 app.use(
   session({
-    cookie: { maxAge: 1 * 60 * 60 * 1000 },
-    store: sessionStore,
-    saveUninitialized: true,
     resave: "true",
-    secret: "secret",
+    store: sessionStore,
+    secret: COOKIE_SECRET,
+    saveUninitialized: true,
+    cookie: { maxAge: SESSION_EXPIRES_TIME, httpOnly: true, secure: false },
   })
 )
 

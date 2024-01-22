@@ -3,6 +3,7 @@ export const authPaths = {
   register: "/dang-ky",
   logout: "/dang-xuat",
   active: "/kich-hoat-tai-khoan",
+  resetPassword: "/doi-mat-khau",
 }
 
 export const rootPaths = {

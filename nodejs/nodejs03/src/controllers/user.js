@@ -1,5 +1,5 @@
 import { Op } from "sequelize"
-import { User } from "../database/models/index.js"
+import { User, Course } from "../database/models/index.js"
 
 export async function listUsers(req, res, next) {
   try {
@@ -41,6 +41,13 @@ export async function createUser(req, res, next) {
       status,
     })
 
+    const courses = Array.isArray(req.body?.courses) ? req.body.courses : [req.body?.courses]
+
+    if (courses.length) {
+      const coursesInstance = await Promise.all(courses.map((courseId) => Course.findByPk(courseId)))
+      await user.addCourses(coursesInstance)
+    }
+
     res.redirect("/users")
   } catch (error) {
     next(error)
@@ -54,12 +61,9 @@ export async function editUserPost(req, res, next) {
 
     if (!user) throw new Error("Người dùng không tồn tại")
 
-    console.log(req.body)
-
     const name = req.body.name?.trim()
     const email = req.body.email?.trim()
     const status = req.body.status === "1"
-
 
     await User.update(
       {
@@ -71,6 +75,14 @@ export async function editUserPost(req, res, next) {
         where: { id: user.id },
       }
     )
+
+    const courses = Array.isArray(req.body?.courses) ? req.body.courses : [req.body?.courses]
+
+    if (courses.length) {
+      const coursesInstance = await Promise.all(courses.map((courseId) => Course.findByPk(courseId)))
+      const user = await User.findByPk(user.id)
+      await user.setCourses(coursesInstance)
+    }
 
     res.redirect(`/users/${user.id}`)
   } catch (error) {
@@ -85,7 +97,11 @@ export async function editUserGet(req, res, next) {
 
     if (!user) throw new Error("Người dùng không tồn tại")
 
-    res.render(`users/create`, { user: user.dataValues })
+    const courses = await Course.findAll({
+      order: [["name", "desc"]],
+    })
+
+    res.render(`users/create`, { user: user, courses })
   } catch (error) {
     next(error)
   }
