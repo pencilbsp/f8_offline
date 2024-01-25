@@ -7,7 +7,7 @@ import session, { MemoryStore } from "express-session"
 import authGuard from "./middlewares/auth-guard.js"
 import guestGuard from "./middlewares/guest-guard.js"
 import { POST as handleMail } from "./controllers/mail.js"
-import { COOKIE_SECRET, SESSION_EXPIRES_TIME } from "./config.js"
+import { APP_PORT, COOKIE_SECRET, SESSION_EXPIRES_TIME } from "./config.js"
 import { POST as handleLogin } from "./controllers/auth/login.js"
 import { POST as handleLogout } from "./controllers/auth/logout.js"
 import { GET as handleTrackingMail } from "./controllers/tracking.js"
@@ -58,4 +58,4 @@ app.post("/logout", authGuard, handleLogout)
 
 app.get("/tracking.gif", handleTrackingMail)
 
-app.listen(5001)
+app.listen(APP_PORT)
