@@ -1,0 +1,29 @@
+<div class="w-full flex flex-col items-center justify-center">
+  <h1 class="text-xl">Đăng nhập</h1>
+
+  <form action="/login" method="post" class="flex flex-col mt-4 min-w-80 max-w-xs">
+    <div class="flex flex-col space-y-3">
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">Địa chỉ Gmail</span>
+        </div>
+        <input name="email" type="email" placeholder="you@gmail.com" class="input input-bordered w-full input-sm" />
+      </label>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">Mật khẩu Gmail</span>
+        </div>
+        <input
+          name="password"
+          type="password"
+          placeholder="Mật khẩu Gmail"
+          class="input input-bordered w-full input-sm"
+        />
+      </label>
+    </div>
+
+    <div class="flex mt-4">
+      <button class="btn btn-sm w-full" type="submit">Đăng nhập</button>
+    </div>
+  </form>
+</div>

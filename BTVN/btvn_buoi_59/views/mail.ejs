@@ -1,0 +1,66 @@
+<div class="">
+  <h1 class="font-bold text-xl">Gửi email</h1>
+
+  <div class="max-w-xs mt-3">
+    <!-- SUCCESS MESSAGE -->
+    <% if (typeof message !== "undefined") { %>
+    <div role="alert" class="alert alert-success">
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span><%= message %></span>
+    </div>
+    <% } %>
+
+    <!-- ERROR MESSAGE -->
+    <% if (typeof error !== "undefined") { %>
+    <div role="alert" class="alert alert-error">
+      <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+        />
+      </svg>
+      <span><%= error %></span>
+    </div>
+    <% } %>
+  </div>
+
+  <form action="mail" method="post" class="flex flex-col max-w-xs">
+    <div class="flex flex-col space-y-3">
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">Email người nhận</span>
+        </div>
+        <input name="to" type="email" placeholder="you@email.com" class="input input-bordered w-full input-sm" />
+      </label>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">Tiêu đề</span>
+        </div>
+        <input name="subject" type="text" placeholder="Tiêu đề" class="input input-bordered w-full input-sm" />
+      </label>
+      <label class="form-control w-full">
+        <div class="label">
+          <span class="label-text">Nội dung</span>
+        </div>
+        <textarea
+          name="text"
+          class="textarea textarea-sm textarea-bordered h-24"
+          placeholder="Nội dung mail"
+        ></textarea>
+      </label>
+    </div>
+
+    <div class="mt-4">
+      <button class="btn btn-sm w-full" type="submit">Gửi</button>
+    </div>
+  </form>
+</div>
