@@ -9,26 +9,29 @@ module.exports = {
      * Example:
      * await queryInterface.createTable('users', { id: Sequelize.INTEGER });
      */
-    await queryInterface.changeColumn("User", "name", {
-      type: Sequelize.STRING(50),
-      allowNull: false,
-    })
 
-    await queryInterface.renameColumn("User", "name", "full_name")
+    await queryInterface.createTable("Blacklist", {
+      id: {
+        type: Sequelize.INTEGER,
+        autoIncrement: true,
+        primaryKey: true,
+      },
+      token: {
+        type: Sequelize.STRING,
+      },
+      expired: {
+        type: Sequelize.INTEGER,
+      },
+    })
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.renameColumn("User", "full_name", "name")
-
-    await queryInterface.changeColumn("User", "name", {
-      type: Sequelize.STRING(30),
-      allowNull: true,
-    })
     /**
      * Add reverting commands here.
      *
      * Example:
      * await queryInterface.dropTable('users');
      */
+    await queryInterface.dropTable("Blacklist")
   },
 }

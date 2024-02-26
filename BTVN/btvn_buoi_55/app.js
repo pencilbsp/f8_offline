@@ -30,6 +30,7 @@ app.use(expressEjsLayouts)
 // app.set("layout", "layout")
 
 app.use(cookieParser(COOKIE_SECRET))
+
 app.use(
   session({
     resave: "true",

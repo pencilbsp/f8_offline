@@ -35,6 +35,9 @@ module.exports = (sequelize, DataTypes) => {
       name: {
         type: DataTypes.STRING(255),
       },
+      password: {
+        type: DataTypes.STRING,
+      },
       email: {
         type: DataTypes.STRING(255),
       },
@@ -45,9 +48,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: "User",
-      tableName: "users",
-      createdAt: "created_at",
-      updatedAt: "updated_at",
+      tableName: "User",
     }
   )
   return User

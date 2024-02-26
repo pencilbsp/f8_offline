@@ -1,0 +1,44 @@
+<h1>Thêm vai trò</h1>
+
+<form>
+  <div class="mb-3">
+    <label for="name" class="form-label">Tên</label>
+    <input type="text" class="form-control" id="name" />
+    <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col" style="width: 20%">Chức năng</th>
+        <th scope="col" colspan="4">Quyền</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mark</td>
+        <td>
+          <div class="row ms-0">
+            <div class="col form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="role.read" value="role.read" />
+              <label class="form-check-label" for="role.read">Read</label>
+            </div>
+            <div class="col form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="role.create" value="role.create" />
+              <label class="form-check-label" for="role.create">Create</label>
+            </div>
+            <div class="col form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="role.update" value="role.update" />
+              <label class="form-check-label" for="role.update">Update</label>
+            </div>
+            <div class="col form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="role.delete" value="role.delete" />
+              <label class="form-check-label" for="role.delete">Delete</label>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

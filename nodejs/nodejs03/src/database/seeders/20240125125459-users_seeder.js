@@ -1,6 +1,5 @@
 "use strict"
-
-const { faker } = require("@faker-js/faker")
+const bcrypt = require("bcrypt")
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -14,17 +13,18 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
      */
-    const users = []
-    for (let index = 0; index < 50; index++) {
-      users.push({
-        full_name: faker.person.fullName(),
-        email: faker.internet.email(),
-        status: faker.datatype.boolean(),
-        created_at: faker.date.past(),
-        updated_at: faker.date.past(),
-        address: faker.location.streetAddress(),
-      })
-    }
+    const salt = bcrypt.genSaltSync(10)
+    const users = [
+      {
+        name: "Vũ Thống",
+        email: "pencil.bsp@gmail.com",
+        password: bcrypt.hashSync("123456", salt),
+        status: true,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ]
+    await queryInterface.bulkInsert("User", users)
   },
 
   async down(queryInterface, Sequelize) {
