@@ -1,6 +1,8 @@
 import { randomUUID } from "crypto"
 import { createTransport } from "nodemailer"
+
 import prisma from "../prisma/prisma.js"
+import { TRACKING_SERVER } from "../config.js"
 
 function sendMail(id, data) {
   return new Promise(async (resolve, reject) => {
@@ -22,7 +24,7 @@ function sendMail(id, data) {
         to: data.to,
         html: `<div style="width: 100%; height: 100%;">
           <p>${data.text}</p>
-          <img src="https://tracking.pendev.cc/tracking.gif?id=${mailId}" alt="" style="width: 1px; height: 1px; visibility: hidden;" />
+          <img src="${TRACKING_SERVER}/tracking.gif?id=${mailId}" alt="" style="width: 1px; height: 1px; visibility: hidden;" />
         </div>`,
         from: user.email,
         subject: data.subject,
@@ -31,7 +33,7 @@ function sendMail(id, data) {
       transporter.sendMail(options, function (error, info) {
         transporter.close()
         if (error) return reject(error)
-        return resolve({ info, sent: { ...options, id: mailId } })
+        return resolve({ info, sent: { ...options, text: data.text, id: mailId } })
       })
     } catch (error) {
       return reject(error)
@@ -53,10 +55,11 @@ export async function POST(req, res) {
       },
     })
 
-    req.flash(message, "Đã gửi mail thành công")
+    req.flash("message", "Đã gửi mail thành công")
     res.redirect("/mail")
   } catch (error) {
-    req.flash(error, error.message)
+    console.log(error)
+    req.flash("error", error.message)
     res.redirect("/mail")
   }
 }
